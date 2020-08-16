@@ -39,7 +39,7 @@ Accesoform.addEventListener("submit", e => {
     .then(userCredential => {
     Accesoform.reset();
     $('#AccesoModal').modal('hide');
-    window.onload = "https://agustinifd.github.io/Repositorio/home.html"
+    window.location.href = "https://agustinifd.github.io/Repositorio/home.html";
     })
     .catch(function(error) {
         alert("ATENCION EMAIL O PASSWORD NO VALIDOS")
@@ -53,7 +53,7 @@ Salir.addEventListener("click", e => {
     e.preventDefault();  
     auth.signOut().then(() => {
         alert("Has salido con exito")
-        window.onload = "https://agustinifd.github.io/Repositorio/index.html"
+        window.location.href = "https://agustinifd.github.io/Repositorio/index.html"
         })
 })
 
@@ -77,7 +77,7 @@ firebase.auth().signInWithPopup(provider)
     .then(result => {
         Accesoform.reset();
         $('#AccesoModal').modal('hide');
-        window.onload = "https://agustinifd.github.io/Repositorio/home.html"
+        window.location.href = "https://agustinifd.github.io/Repositorio/home.html";
     })
 })
 
