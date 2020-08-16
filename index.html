@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fire-Base</title>
+    <title>Acceso a e-commerce</title>
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <!---BOOSTRAP SCRIPTS--->
@@ -12,7 +12,21 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 <style>
-    .collapse
+
+.modal-content
+{
+  background-image: url("img/login.png");
+  justify-content: center;
+  }
+  .modal-content .modal-header h5 {
+  color: rgb(184, 35, 35);
+  font-weight: bold;
+  
+  text-align: center;
+  margin-left: 200px;
+  }
+
+  .collapse
     {
     justify-content: center;
     }
@@ -24,7 +38,7 @@
   text-align: center;
   text-shadow: black 6px 6px 8px;
   text-transform: uppercase;
-         margin-top: 150px;
+         margin-top: 10px;
         margin-right: 10px;
        margin-bottom: 10px;
          margin-left: 10px;
@@ -35,7 +49,7 @@
 </style>
 
 </head>
-<body>
+<body   background="img/cover_back.png");>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -47,7 +61,7 @@
               <a class="nav-links sinlogear" style="display: none;" href="#" data-toggle="modal" data-target="#AccesoModal">Acceder</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link logeado" style="display: none;"  href="#" id="Salir">Salir</a>
+                <a class="nav-links logeado" style="display: none;"  href="#" id="Salir">Confirmar salida</a>
               </li>
               </ul>
             </div>
@@ -133,8 +147,8 @@
   const fs = firebase.firestore();
 </script>
   <!---CODIGO DE JS--->
-
-  <script src="https://agustinifd.github.io/Repositorio/js/init.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/init.js"></script>
 </body>
 </html>
 </html>
