@@ -1,5 +1,6 @@
 const sinlogear = document.querySelectorAll(".sinlogear")
 const logeado = document.querySelectorAll(".logeado")
+
 const loginCheck = user => {
     if (user) {
 logeado.forEach(link => link.style.display = "block");
@@ -38,7 +39,7 @@ Accesoform.addEventListener("submit", e => {
     .then(userCredential => {
     Accesoform.reset();
     $('#AccesoModal').modal('hide');
-    var estado = true
+    window.onload = "https://agustinifd.github.io/Repositorio/home.html"
     })
     .catch(function(error) {
         alert("ATENCION EMAIL O PASSWORD NO VALIDOS")
@@ -52,7 +53,7 @@ Salir.addEventListener("click", e => {
     e.preventDefault();  
     auth.signOut().then(() => {
         alert("Has salido con exito")
-        var estado = false
+        window.onload = "https://agustinifd.github.io/Repositorio/index.html"
         })
 })
 
@@ -76,6 +77,7 @@ firebase.auth().signInWithPopup(provider)
     .then(result => {
         Accesoform.reset();
         $('#AccesoModal').modal('hide');
+        window.onload = "https://agustinifd.github.io/Repositorio/home.html"
     })
 })
 
