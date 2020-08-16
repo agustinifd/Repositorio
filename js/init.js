@@ -88,31 +88,6 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
-var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    // TODO: Replace the following with your app's Firebase project configuration
-    var firebaseConfig = {
-      // ...
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-
-let firebaseConfig = {
-  apiKey: "AIzaSyAIcCtwoX_ch7-d6ibphLJcyhiKgkDwSWk",
-  authDomain: "prueba-oauth-286403.firebaseapp.com",
-  databaseURL: "https://prueba-oauth-286403.firebaseio.com",
-  projectId: "prueba-oauth-286403",
-  storageBucket: "prueba-oauth-286403.appspot.com",
-  messagingSenderId: "829078339573",
-  appId: "1:829078339573:web:c23f82ba4ba965ab7eaabc",
-  measurementId: "G-FT20SWH0YN"
-};
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
