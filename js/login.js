@@ -4,3 +4,19 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
+
+function validar()
+{
+    var validarusr = document.getElementById("Usuario").value
+    var validarpasw = document.getElementById("clave").value
+    if (validarusr == "" || validarpasw == ""){
+    alert("Debes llenar ambos campos")
+    }
+    else
+    { 
+    return window.location.href = "home.html";
+}}
+
+
+
+
