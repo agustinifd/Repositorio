@@ -25,6 +25,8 @@ Registroform.addEventListener("submit", (e) => {
     Registroform.reset();
     $('#RegistroModal').modal('hide');
     })
+    .catch(function(error)
+    {alert("E-MAIL NO VALIDO O CLAVE MENOR A 6 CARACTERES")})
 })
 
 ///// ACCESO USUARIO /////
