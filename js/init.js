@@ -16,12 +16,15 @@ let loginCheck = user => {
 logeado.forEach(link => link.style.display = "block");
 sinlogear.forEach(link => link.style.display = "none");
 console.log("logeado")
+sessionStorage.setItem("nombre", estalog)
+console.log(sessionStorage.setItem("nombre", estalog))
 estalog = true
 } else {
     logeado.forEach(link => link.style.display = "none");
     sinlogear.forEach(link => link.style.display = "block")
     console.log("NOOOOlogeado")
     estalog = false
+   
 }
 }
 

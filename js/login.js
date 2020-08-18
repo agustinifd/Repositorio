@@ -1,7 +1,3 @@
-
-
-
-
 //// REGISTRO USUARIO /////
 
 const Registroform = document.querySelector("#Registro-form");
