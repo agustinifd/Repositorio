@@ -91,5 +91,7 @@ firebase.auth().signInWithPopup(provider)
     .then(result => {
         Accesoform.reset();
         $('#AccesoModal').modal('hide');
-        })
+        sessionStorage.SetItem("nombre", firebase.auth().currentUser.email)
+        window.location.href = "https://agustinifd.github.io/Repositorio/home.html";
+    })
 })
