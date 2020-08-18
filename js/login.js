@@ -43,13 +43,11 @@ Accesoform.addEventListener("submit", e => {
     .then(userCredential => {
     Accesoform.reset();
     $('#AccesoModal').modal('hide');
-    var loged = true 
     window.location.href = "https://agustinifd.github.io/Repositorio/home.html";
     })
     .catch(function(error) {
         alert("ATENCION EMAIL O PASSWORD NO VALIDOS");
-        var loged = false;
-    });
+        });
     
 })
 
@@ -59,7 +57,6 @@ Salir.addEventListener("click", e => {
     e.preventDefault();  
     auth.signOut().then(() => {
         alert("Has salido con exito")
-        var loged = false
         window.location.href = "https://agustinifd.github.io/Repositorio/index.html"
         })
 })
@@ -70,11 +67,11 @@ auth.onAuthStateChanged(user =>
         if (user)
         {
             loginCheck(user)
-            var loged = true
+            
         }
         else {
             loginCheck(user)
-            var loged = false }
+            }
         })
     
 
