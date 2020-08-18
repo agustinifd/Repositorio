@@ -6,6 +6,25 @@ const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+const sinlogear = document.querySelectorAll(".sinlogear")
+const logeado = document.querySelectorAll(".logeado")
+
+let estalog = false
+
+let loginCheck = user => {
+    if (user) {
+logeado.forEach(link => link.style.display = "block");
+sinlogear.forEach(link => link.style.display = "none");
+console.log("logeado")
+estalog = true
+} else {
+    logeado.forEach(link => link.style.display = "none");
+    sinlogear.forEach(link => link.style.display = "block")
+    console.log("NOOOOlogeado")
+    estalog = false
+}
+}
+
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";

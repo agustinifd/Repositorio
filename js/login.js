@@ -1,21 +1,4 @@
-const sinlogear = document.querySelectorAll(".sinlogear")
-const logeado = document.querySelectorAll(".logeado")
 
-let estalog = false
-
-let loginCheck = user => {
-    if (user) {
-logeado.forEach(link => link.style.display = "block");
-sinlogear.forEach(link => link.style.display = "none");
-console.log("logeado")
-estalog = true
-} else {
-    logeado.forEach(link => link.style.display = "none");
-    sinlogear.forEach(link => link.style.display = "block")
-    console.log("NOOOOlogeado")
-    estalog = false
-}
-}
 
 
 
