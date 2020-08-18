@@ -1,13 +1,16 @@
 const sinlogear = document.querySelectorAll(".sinlogear")
 const logeado = document.querySelectorAll(".logeado")
 
+let estado = false
 const loginCheck = user => {
     if (user) {
 logeado.forEach(link => link.style.display = "block");
 sinlogear.forEach(link => link.style.display = "none");
+estado = true
 } else {
     logeado.forEach(link => link.style.display = "none");
     sinlogear.forEach(link => link.style.display = "block")
+    estado = false
 }
 }
 
@@ -41,6 +44,7 @@ Accesoform.addEventListener("submit", e => {
     .then(userCredential => {
     Accesoform.reset();
     $('#AccesoModal').modal('hide');
+    estado = true
     window.location.href = "https://agustinifd.github.io/Repositorio/home.html";
     })
     .catch(function(error) {
