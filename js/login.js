@@ -1,3 +1,22 @@
+/////// LOGIN CHECK ////////
+
+const sinlogear = document.querySelectorAll(".sinlogear")
+const logeado = document.querySelectorAll(".logeado")
+
+
+
+let loginCheck = user => {
+    if (user) {
+logeado.forEach(link => link.style.display = "block");
+sinlogear.forEach(link => link.style.display = "none");
+console.log("logeado");
+
+} else {
+    logeado.forEach(link => link.style.display = "none");
+    sinlogear.forEach(link => link.style.display = "block");
+    console.log("NOOOOlogeado");
+}
+}
 //// REGISTRO USUARIO /////
 
 const Registroform = document.querySelector("#Registro-form");
@@ -25,7 +44,7 @@ Accesoform.addEventListener("submit", e => {
     auth
     .signInWithEmailAndPassword(Accesoemail, Accesopassword)
     .then(userCredential => {
-    sessionStorage.setItem("nombre", Accesoemail.value)
+    sessionStorage.setItem("nombre", Accesoemail)
     Accesoform.reset();
     $('#AccesoModal').modal('hide');
     
