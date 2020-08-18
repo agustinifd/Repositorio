@@ -14,7 +14,8 @@ console.log("logeado");
 } else {
     logeado.forEach(link => link.style.display = "none");
     sinlogear.forEach(link => link.style.display = "block");
-    console.log("NOOOOlogeado");
+    console.log("Nologeado");
+    sessionStorage.clear();
 }
 }
 //// REGISTRO USUARIO /////
@@ -62,7 +63,6 @@ Salir.addEventListener("click", e => {
     e.preventDefault();  
     auth.signOut().then(() => {
         alert("Has salido con exito");
-        storage.clear();
         sessionStorage.clear();
         window.location.href = "https://agustinifd.github.io/Repositorio/index.html";
         })
@@ -78,6 +78,7 @@ auth.onAuthStateChanged(user =>
         }
         else {
             loginCheck(user)
+            
             }
         })
     
