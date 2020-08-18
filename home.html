@@ -121,8 +121,8 @@
     <script>
     var remplazo = document.getElementById("profile")
     function remplazo(){
-      if (localStorage.length > 0){
-      remplazo.innerText = localStorage.getItem("nombre")}
+      if (sessionStorage.length > 0){
+      remplazo.innerText = sessionStorage.getItem("nombre")}
       else{ remplazo.innerText = "Anonimo"}
     };
     </script>
