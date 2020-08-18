@@ -22,8 +22,8 @@ sessionStorage.setItem("nombre", asd.email)
     logeado.forEach(link => link.style.display = "none");
     sinlogear.forEach(link => link.style.display = "block");
     console.log("NOOOOlogeado");
+    sessionStorage.clear()
     asd = "Anonimo"
-    console.log(asd.email)
 }
 }
 
