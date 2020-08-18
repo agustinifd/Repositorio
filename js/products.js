@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 .then(data =>{
     let prueba = ""
     for (let i = 0; i < data.length; i++) {
-       prueba = prueba + `"<div class=" + "containers"` + i + `>Nombre:`  + data[i].name + "<br>" + "Descripcion: " + data[i].description + "<br>" + "Precio: " + data[i].cost + data[i].currency + "<br>" + "Vendidos: " + data[i].soldCount + `</div> <img src="` + data[i].imgSrc + "`>"
+       prueba = prueba + "<div class=" + "containers" + i + ">Nombre: " + data[i].name + "<br>" + "Descripcion: " + data[i].description + "<br>" + "Precio: " + data[i].cost + data[i].currency + "<br>" + "Vendidos: " + data[i].soldCount + "</div>" + "<img src=" + data[i].imgSrc + ">"
     }
     document.getElementById("prueba").innerHTML = prueba;
     })
