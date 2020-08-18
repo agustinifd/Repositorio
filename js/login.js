@@ -25,8 +25,10 @@ Accesoform.addEventListener("submit", e => {
     auth
     .signInWithEmailAndPassword(Accesoemail, Accesopassword)
     .then(userCredential => {
+    sessionStorage.setItem("nombre", Accesoemail.value)
     Accesoform.reset();
     $('#AccesoModal').modal('hide');
+    
     window.location.href = "https://agustinifd.github.io/Repositorio/home.html";
     })
     .catch(function(error) {
@@ -42,7 +44,7 @@ Salir.addEventListener("click", e => {
     auth.signOut().then(() => {
         alert("Has salido con exito");
         storage.clear();
-        sessionStorage.clear()
+        sessionStorage.clear();
         window.location.href = "https://agustinifd.github.io/Repositorio/index.html";
         })
 })

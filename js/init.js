@@ -16,14 +16,11 @@ let loginCheck = user => {
 logeado.forEach(link => link.style.display = "block");
 sinlogear.forEach(link => link.style.display = "none");
 console.log("logeado");
-asd = user;
-sessionStorage.setItem("nombre", asd.email)
+
 } else {
     logeado.forEach(link => link.style.display = "none");
     sinlogear.forEach(link => link.style.display = "block");
     console.log("NOOOOlogeado");
-    sessionStorage.clear()
-    asd = "Anonimo"
 }
 }
 
