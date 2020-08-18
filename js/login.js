@@ -40,8 +40,10 @@ const Salir = document.querySelector("#Salir");
 Salir.addEventListener("click", e => {
     e.preventDefault();  
     auth.signOut().then(() => {
-        alert("Has salido con exito")
-        window.location.href = "https://agustinifd.github.io/Repositorio/index.html"
+        alert("Has salido con exito");
+        storage.clear();
+        sessionStorage.clear()
+        window.location.href = "https://agustinifd.github.io/Repositorio/index.html";
         })
 })
 
