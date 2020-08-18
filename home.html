@@ -22,6 +22,7 @@
         <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/cart.html">Mi carrito</a>
+        <a class="py-2 d-none d-md-inline-block" id="profile" href="https://agustinifd.github.io/Repositorio/my-profile.html"></a>
       </div>
       </div>
     </nav>
@@ -117,7 +118,12 @@
     <script src="https://agustinifd.github.io/Repositorio/js/jquery-3.4.1.min.js"></script>
     <script src="https://agustinifd.github.io/Repositorio/js/bootstrap.bundle.min.js"></script>
     <script src="https://agustinifd.github.io/Repositorio/js/init.js"></script>
-    <script>const remplazo = document.getElementById("user")
-      remplazo.innerText = localStorage.getItem("nombre", user)</script>
+    <script>const remplazo = document.getElementById("profile")
+    function remplazo(){
+      if (localStorage.length > 0){
+      remplazo.innerText = localStorage.getItem("nombre")}
+      else{ remplazo.innerText = "Anonimo"}
+    };
+    </script>
     </body>
 </html>
