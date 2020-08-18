@@ -89,5 +89,13 @@
   <script src="https://agustinifd.github.io/Repositorio/js/dropzone.js"></script>
   <script src="https://agustinifd.github.io/Repositorio/js/init.js"></script>
   <script src="https://agustinifd.github.io/Repositorio/js/categories.js"></script>
+  <script>
+    var remplazo = document.getElementById("profile")
+      function remplazito(){
+        if (sessionStorage.length > 0){
+        remplazo.innerText = sessionStorage.getItem("nombre")}
+        else{ remplazo.innerText = "Anonimo"}
+      };
+      remplazito();</script>
   </body>
 </html>
