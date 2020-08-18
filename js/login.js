@@ -1,16 +1,13 @@
 const sinlogear = document.querySelectorAll(".sinlogear")
 const logeado = document.querySelectorAll(".logeado")
 
-var estado = false
-const loginCheck = user => {
+let loginCheck = user => {
     if (user) {
 logeado.forEach(link => link.style.display = "block");
 sinlogear.forEach(link => link.style.display = "none");
-estado = true
 } else {
     logeado.forEach(link => link.style.display = "none");
     sinlogear.forEach(link => link.style.display = "block")
-    estado = false
 }
 }
 
