@@ -90,7 +90,7 @@ fetch(PRODUCTS_URL)
 listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    if (txtfiltromin.value < parseInt(data[i].cost) < txtfiltromax.value) {
+    if ((txtfiltromin.value < parseInt(data[i].cost)) && (parseInt(data[i].cost) < txtfiltromax.value)) {
         listafinalproductos += "";}
     else {
     listafinalproductos += "<li>" + `<div class="row">
