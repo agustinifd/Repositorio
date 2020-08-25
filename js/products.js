@@ -58,7 +58,7 @@ function ordenardsc()
     .then(data => data.json())
     .then(data =>{
     data.sort(function(a, b)
-    {return a.name > b.name;});
+    {return a.cost.parseInt > b.cost.parseInt;});
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
