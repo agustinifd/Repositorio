@@ -108,7 +108,7 @@ document.getElementById("cat-list-container").innerHTML = listafinalproductos
 function filtroproducto()
 {   
 var filtro = 0
-document.getElementById(filtroproducto.value) = filtro
+document.getElementById(txtfiltroproducto.value) = filtro
     fetch(PRODUCTS_URL)
     .then(data => data.json())
     .then(data =>{
