@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     
 });
 });
-////////////////// ORDEN DESENDIENTE RELEVANCIA////////////////////////
+////////////////// ORDEN RELEVANCIA////////////////////////
     function ordenarrlv()
 {   
     fetch(PRODUCTS_URL)
@@ -58,7 +58,7 @@ function ordenardsc()
     .then(data => data.json())
     .then(data =>{
     data.sort(function(a, b)
-    {return a.cost.parseInt > b.cost.parseInt;});
+    {return a.cost.parseInt() > b.cost.parseInt();});
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
@@ -78,14 +78,14 @@ for (let i = 0; i < data.length; i++) {
 document.getElementById("cat-list-container").innerHTML = listafinalproductos
 })};
 
-/////////////////////// OREDENAR POR RELEVANCIA/////////////
-function ordenarrlv()
+/////////////////////// OREDENAR PRECIO ASENDENTE/////////////
+function ordenarasc()
 {   
     fetch(PRODUCTS_URL)
     .then(data => data.json())
     .then(data =>{
     data.sort(function(a, b)
-    {return a.soldCount < b.soldCount;});
+    {return a.cost < b.soldCount;});
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
