@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 });
 });
 ////////////////// ORDEN DESENDIENTE ////////////////////////
-    function ordenardsc()
+    function ordenarrlv()
 {   
     fetch(PRODUCTS_URL)
     .then(data => data.json())
