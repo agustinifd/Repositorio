@@ -32,8 +32,15 @@
         <a class="py-2 d-none d-md-inline-block" id="profile" href="https://agustinifd.github.io/Repositorio/my-profile.html"></a>
       </div>
     </nav>
-    <div class="col text-right" id="botones"><input type="button" onclick="ordenarrlv()" value="Revelancia"><input type="button" onclick="ordenardsc()" value="Mayor precio"><input type="button" onclick="ordenarasc()" value="A-Z"></div>
-    <br><div class="row">
+    <div class="col text-right" id="botones">
+      <input type="button" onclick="ordenarrlv()" value="Revelancia">
+      <input type="button" onclick="ordenardsc()" value="Mayor precio">
+      <input type="button" onclick="ordenarasc()" value="A-Z">
+      <input type="number" placeholder="Filtro por $" value="0" id="filtroproducto">
+      <input type="button" onclick="filtroproducto()" value="Filtrar por $">
+    </div>
+    <br>
+    <div class="row">
       <ul id="cat-list-container">
       </ul>
   </div>
