@@ -78,6 +78,12 @@ for (let i = 0; i < data.length; i++) {
 document.getElementById("cat-list-container").innerHTML = listafinalproductos
 })};
 
+function filtro()
+{
+ console.log("sorete");
+}
+
+
 /////////////////////// OREDENAR PRECIO ASENDENTE/////////////
 function ordenarasc()
 {   
@@ -103,34 +109,4 @@ for (let i = 0; i < data.length; i++) {
 </div>` + "</li>"};
 
 document.getElementById("cat-list-container").innerHTML = listafinalproductos
-})};
-
-function filtroproducto()
-{   
-var filtro = 0
-document.getElementById("txtfiltroproducto".value) = filtro
-    fetch(PRODUCTS_URL)
-    .then(data => data.json())
-    .then(data =>{
-    listafinalproductos = "";
-for (let i = 0; i < data.length; i++) {
-    const element = data[i];
-    if (parseInt(data[i].cost) > filtro) {
-        
-    
-    listafinalproductos += "<li>" + `<div class="row">
-    <div class="col-3">
-        <img src="` + data[i].imgSrc + `" class="img-thumbnail">
-    </div>
-    <div class="col">
-        <div class="d-flex w-100 justify-content-between">
-            <h4 class="mb-1">` + data[i].name + `</h4>
-            <small class="text-muted">` + "Precio: " + data[i].cost + data[i].currency + `</small>
-        </div>
-        <p class="mb-1">` + data[i].description + "<br>Unidades Vendidas:" + data[i].soldCount + `</p>
-    </div>
-</div>` + "</li>"};
-
-document.getElementById("cat-list-container").innerHTML = listafinalproductos
-}
 })};
