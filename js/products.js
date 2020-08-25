@@ -90,7 +90,7 @@ listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
     if (parseInt(data[i].cost) < txtfiltro.value) {
-        listafinalproductos += "<li>" + `<div class="row">
+        listafinalproductos += "<li style=`display: block;`>" + `<div class="row">
         <div class="col-3">
             <img src="` + data[i].imgSrc + `" class="img-thumbnail">
         </div>
