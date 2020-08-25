@@ -92,7 +92,7 @@ for (let i = 0; i < data.length; i++) {
     if (parseInt(data[i].cost) < txtfiltro.value) {
         listafinalproductos += "";}
     else {
-    listafinalproductos += "<li>ELSE" + `<div class="row">
+    listafinalproductos += "<li>" + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
