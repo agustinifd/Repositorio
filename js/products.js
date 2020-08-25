@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     .then(data => data.json())
     .then(data =>{
     data.sort(function(a, b)
-    {return a.soldCount > b.soldCount;});
+    {return a.soldCount < b.soldCount;});
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
