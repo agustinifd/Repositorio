@@ -80,7 +80,7 @@ document.getElementById("cat-list-container").innerHTML = listafinalproductos
 
 function filtro()
 {
- console.log("sorete");
+ console.log(txtfiltro.value);
 }
 
 
