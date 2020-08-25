@@ -82,8 +82,7 @@ document.getElementById("cat-list-container").innerHTML = listafinalproductos
 
 function filtro()
 {
-console.log(txtfiltro.value);
-var filtro = txtfiltro.value
+var filtro = txtfiltro.value;
 fetch(PRODUCTS_URL)
 .then(data => data.json())
 .then(data =>{
@@ -92,7 +91,7 @@ for (let i = 0; i < data.length; i++) {
     const element = data[i];
     if (parseInt(data[i].cost) < txtfiltro.value) {
         listafinalproductos += listafinalproductos;
-        console.log(listafinaldeproductos);
+        console.log(listafinalproductos);
     }}})};
 
 
