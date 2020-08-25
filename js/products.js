@@ -91,20 +91,20 @@ listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
     if ((txtfiltromin.value < parseInt(data[i].cost)) && (parseInt(data[i].cost) < txtfiltromax.value)) {
-        listafinalproductos += "";}
-    else {
-    listafinalproductos += "<li>" + `<div class="row">
-    <div class="col-3">
-        <img src="` + data[i].imgSrc + `" class="img-thumbnail">
-    </div>
-    <div class="col">
-        <div class="d-flex w-100 justify-content-between">
-            <h4 class="mb-1">` + data[i].name + `</h4>
-            <small class="text-muted">` + "Precio: " + data[i].cost + data[i].currency + `</small>
+        listafinalproductos += "<li>" + `<div class="row">
+        <div class="col-3">
+            <img src="` + data[i].imgSrc + `" class="img-thumbnail">
         </div>
-        <p class="mb-1">` + data[i].description + "<br>Unidades Vendidas:" + data[i].soldCount + `</p>
-    </div>
-</div>` + "</li>";}
+        <div class="col">
+            <div class="d-flex w-100 justify-content-between">
+                <h4 class="mb-1">` + data[i].name + `</h4>
+                <small class="text-muted">` + "Precio: " + data[i].cost + data[i].currency + `</small>
+            </div>
+            <p class="mb-1">` + data[i].description + "<br>Unidades Vendidas:" + data[i].soldCount + `</p>
+        </div>
+    </div>` + "</li>";}
+    else {
+    listafinalproductos += "";}
 
     document.getElementById("cat-list-container").innerHTML = listafinalproductos;
 }})};
