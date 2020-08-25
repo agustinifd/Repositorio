@@ -101,9 +101,23 @@ for (let i = 0; i < data.length; i++) {
             </div>
             <p class="mb-1">` + data[i].description + "<br>Unidades Vendidas:" + data[i].soldCount + `</p>
         </div>
-    </div>` + "</li>";
+    </div>` + "</li>";}
+    else {
+    listafinalproductos += "<li style=`display: none;`>" + `<div class="row">
+    <div class="col-3">
+        <img src="` + data[i].imgSrc + `" class="img-thumbnail">
+    </div>
+    <div class="col">
+        <div class="d-flex w-100 justify-content-between">
+            <h4 class="mb-1">` + data[i].name + `</h4>
+            <small class="text-muted">` + "Precio: " + data[i].cost + data[i].currency + `</small>
+        </div>
+        <p class="mb-1">` + data[i].description + "<br>Unidades Vendidas:" + data[i].soldCount + `</p>
+    </div>
+</div>` + "</li>";}
+
     document.getElementById("cat-list-container").innerHTML = listafinalproductos;
-    }}})};
+}})};
 
 
 
