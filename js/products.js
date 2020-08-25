@@ -78,10 +78,24 @@ for (let i = 0; i < data.length; i++) {
 document.getElementById("cat-list-container").innerHTML = listafinalproductos
 })};
 
+///////////////////////////////////////////////// FILTRO //////////////////////////////
+
 function filtro()
 {
- console.log(txtfiltro.value);
-}
+console.log(txtfiltro.value);
+var filtro = txtfiltro.value
+fetch(PRODUCTS_URL)
+.then(data => data.json())
+.then(data =>{
+listafinalproductos = "";
+for (let i = 0; i < data.length; i++) {
+    const element = data[i];
+    if (parseInt(data[i].cost) < txtfiltro.value) {
+        listafinalproductos += listafinalproductos;
+        console.log(listafinaldeproductos);
+    }}})};
+
+
 
 
 /////////////////////// OREDENAR PRECIO ASENDENTE/////////////
