@@ -12,6 +12,13 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+       #cat-list-container
+    {
+      list-style:none;
+    }
+ 
+    </style>
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -25,10 +32,12 @@
         <a class="py-2 d-none d-md-inline-block" id="profile" href="https://agustinifd.github.io/Repositorio/my-profile.html"></a>
       </div>
     </nav>
-    <div class="row">
-      <div class="list-group" id="prueba">
-      </div>
+    <div class="col text-right" id="botones"><input type="button" onclick="ordenardsc()" value="Z-A"><input type="button" onclick="ordenarasc()" value="A-Z"></div>
+    <br><div class="row">
+      <ul id="cat-list-container">
+      </ul>
   </div>
+
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">
