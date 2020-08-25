@@ -51,14 +51,14 @@ for (let i = 0; i < data.length; i++) {
 
 document.getElementById("cat-list-container").innerHTML = listafinalproductos
 })};
-//////////////////////// ORDEN ASENDIENDTE /////////////////
+//////////////////////// ORDEN DESENDIENTE /////////////////
 function ordenardsc()
 {   
     fetch(PRODUCTS_URL)
     .then(data => data.json())
     .then(data =>{
     data.sort(function(a, b)
-    {return a.cost.parseInt() > b.cost.parseInt();});
+    {return parseInt(a.cost) > parseInt(b.cost);});
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
