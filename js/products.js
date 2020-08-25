@@ -82,14 +82,15 @@ document.getElementById("cat-list-container").innerHTML = listafinalproductos;
 
 function filtro()
 {
-var filtro = txtfiltro.value;
+var filtromax = txtfiltromax.value;
+var filtromin = txtfiltromin.value;
 fetch(PRODUCTS_URL)
 .then(data => data.json())
 .then(data =>{
 listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    if (parseInt(data[i].cost) < txtfiltro.value) {
+    if (txtfiltromin.value < parseInt(data[i].cost) < txtfiltromax.value) {
         listafinalproductos += "";}
     else {
     listafinalproductos += "<li>" + `<div class="row">
