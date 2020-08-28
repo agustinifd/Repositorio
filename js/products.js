@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     listafinalproductos = "";
     for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    listafinalproductos += "<li>" + `<div class="row">
+    listafinalproductos += `<li class="` + i + `">` + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
@@ -25,6 +25,38 @@ document.addEventListener("DOMContentLoaded", function(e) {
     
 });
 });
+
+//////////// BUSCADOR //////////
+
+busqueta.addEventListener("keypress", buscador);
+btnbuscar.addEventListener("click", buscador);
+///////////////// CODIGO BUSCADOR ///////////////////
+
+
+function buscador()
+{  
+let filtro = document.getElementById("busqueta").value.toLowerCase();  ////// TEXTO A BUSCAR
+// console.log(filtro); 
+// console.log(document.getElementsByTagName("li")[1].textContent)     /////// TODO EL TEXTO
+// elemento1 = document.getElementsByTagName("li")[1].textContent.toLowerCase(); ///PRUEBA MINUSCULAS
+//  elemento1.indexOf(filtro);     //// PRUEBA QUE ENCUENTRA                 
+//  console.log(elemento1.indexOf(filtro)); ///// FILTRADO
+for (let i = 0; i < 4; i++)
+{ 
+    document.getElementsByTagName("li")[i].textContent.toLowerCase().indexOf(filtro) 
+    if (document.getElementsByTagName("li")[i].textContent.toLowerCase().indexOf(filtro) != -1) 
+    {
+ /////   console.log("ENTRO AL IF"); ////////////
+    document.getElementsByTagName("li")[i].style.display = '';
+    }
+    else 
+    {
+  ////  console.log("ENTRO AL ELSE");////
+    document.getElementsByTagName("li")[i].style.display = 'none';
+    }
+}
+};
+
 ////////////////// ORDEN RELEVANCIA////////////////////////
     function ordenarrlv()
 {   
@@ -36,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    listafinalproductos += "<li>" + `<div class="row">
+    listafinalproductos += `<li class="` + i + `">` + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
@@ -62,7 +94,7 @@ function ordenardsc()
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    listafinalproductos += "<li>" + `<div class="row">
+    listafinalproductos += `<li class="` + i + `">` + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
@@ -91,7 +123,7 @@ listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
     if ((txtfiltromin.value <= parseInt(data[i].cost)) && (parseInt(data[i].cost) <= txtfiltromax.value)) {
-        listafinalproductos += "<li>" + `<div class="row">
+        listafinalproductos += `<li class="` + i + `">`+ `<div class="row">
         <div class="col-3">
             <img src="` + data[i].imgSrc + `" class="img-thumbnail">
         </div>
@@ -123,11 +155,12 @@ function ordenarasc()
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    listafinalproductos += "<li>" + `<div class="row">
+    listafinalproductos += `<li class="` + i + `">` + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
-    <div class="col">
+    <div class="col" id="` + i + `">` +
+    `
         <div class="d-flex w-100 justify-content-between">
             <h4 class="mb-1">` + data[i].name + `</h4>
             <small class="text-muted">` + "Precio: " + data[i].cost + data[i].currency + `</small>
