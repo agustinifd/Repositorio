@@ -9,6 +9,6 @@ fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
 })
 .then(function(productInfo)
 {
-    console.log(productInfo);
+document.getElementById("producto1nombre").innerHTML = productInfo.name
 })
 });
