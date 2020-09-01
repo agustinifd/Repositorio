@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     listafinalproductos = "";
     for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    listafinalproductos += `<a href="product-info.html"><li class="` + i + `">` + `<div class="row">
+    listafinalproductos += `<a class="link" href="product-info.html"><li class="` + i + `">` + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
@@ -68,7 +68,7 @@ for (let i = 0; i < 4; i++)
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    listafinalproductos += `<a href="product-info.html"><li href="product-info.html" class="` + i + `">` + `<div class="row">
+    listafinalproductos += `<a class="link" href="product-info.html"><li href="product-info.html" class="` + i + `">` + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
@@ -94,7 +94,7 @@ function ordenardsc()
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    listafinalproductos += `<a href="product-info.html"><li href="product-info.html" class="` + i + `">` + `<div class="row">
+    listafinalproductos += `<a class="link" href="product-info.html"><li href="product-info.html" class="` + i + `">` + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
@@ -123,7 +123,7 @@ listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
     if ((txtfiltromin.value <= parseInt(data[i].cost)) && (parseInt(data[i].cost) <= txtfiltromax.value)) {
-        listafinalproductos += `<a href="product-info.html"><li href="product-info.html" class="` + i + `">`+ `<div class="row">
+        listafinalproductos += `<a class="link" href="product-info.html"><li href="product-info.html" class="` + i + `">`+ `<div class="row">
         <div class="col-3">
             <img src="` + data[i].imgSrc + `" class="img-thumbnail">
         </div>
@@ -155,7 +155,7 @@ function ordenarasc()
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    listafinalproductos += `<a href="product-info.html"><li href="product-info.html" class="` + i + `">` + `<div class="row">
+    listafinalproductos += `<a class="link" href="product-info.html"><li href="product-info.html" class="` + i + `">` + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
