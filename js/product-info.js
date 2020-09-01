@@ -7,8 +7,8 @@ fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
 .then(function(response)
 {return response.json();
 })
-.then(function(MyJson)
+.then(function(productInfo)
 {
-    console.log(MyJson);
+    console.log(productInfo);
 })
 });
