@@ -68,7 +68,7 @@ for (let i = 0; i < 4; i++)
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    listafinalproductos += `<li href="product-info.html" class="` + i + `">` + `<div class="row">
+    listafinalproductos += `<a href="product-info.html"><li  class="` + i + `">` + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
@@ -79,7 +79,7 @@ for (let i = 0; i < data.length; i++) {
         </div>
         <p class="mb-1">` + data[i].description + "<br>Unidades Vendidas:" + data[i].soldCount + `</p>
     </div>
-</div>` + "</li>"};
+</div>` + "</li></a>"};
 
 document.getElementById("cat-list-container").innerHTML = listafinalproductos
 })};
