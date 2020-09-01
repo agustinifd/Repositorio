@@ -68,7 +68,7 @@ for (let i = 0; i < 4; i++)
     listafinalproductos = "";
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    listafinalproductos += `<li class="` + i + `">` + `<div class="row">
+    listafinalproductos += `<li href="product-info.html" class="` + i + `">` + `<div class="row">
     <div class="col-3">
         <img src="` + data[i].imgSrc + `" class="img-thumbnail">
     </div>
