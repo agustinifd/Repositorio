@@ -18,4 +18,5 @@ document.addEventListener("DOMContentLoaded", function(e){
         '<td><a href="' + productInfo.images[3] + '" target="_blank"><img src=' + productInfo.images[3] + '></a></td>' + 
         '<td><a href="' + productInfo.images[4] + '" target="_blank"><img src=' + productInfo.images[4] + '></a></td></table></ul></div></div>' 
     });
+    console.log("hola")
     });
