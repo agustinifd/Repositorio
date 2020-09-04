@@ -27,8 +27,17 @@ document.addEventListener("DOMContentLoaded", function(e){
     console.log(comentarios.length)
     for (let i = 0; i < comentarios.length; i++) {
         const element = comentarios[i];
-        document.getElementById("comentarios").innerHTML = comentarios[i].name + comentarios[i].description + comentarios[i].score + comentarios[i].dateTime;
-        
+        document.getElementById("comentarios").innerHTML = `<div class="card">
+        <div class="card-header">
+        ${comentarios[i].score}
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>${comentarios[i].description}</p>
+            <footer class="blockquote-footer">${comentarios[i].user}<cite title="Source Title">${comentarios[i].dateTime}</cite></footer>
+          </blockquote>
+        </div>
+      </div>`       
     }
     }
     )});
