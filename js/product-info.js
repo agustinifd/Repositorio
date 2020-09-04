@@ -64,15 +64,15 @@ document.addEventListener("DOMContentLoaded", function(e){
       for (let i = 0; i < comentarios.length; i++)
     { 
         if(comentarios[i].score = 1){
-    document.getElementsById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span>`;}
+    document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span>`;}
     if(comentarios[i].score = 2)
-    {document.getElementsById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    {document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
     if(comentarios[i].score = 3)
-    {document.getElementsById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    {document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
     if(comentarios[i].score = 4)
-    {document.getElementsById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    {document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
     if(comentarios[i].score = 5)
-    {document.getElementsById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    {document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
         ;}}})})
        
 
