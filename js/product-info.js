@@ -19,22 +19,11 @@ document.addEventListener("DOMContentLoaded", function(e){
         '<td><a href="' + productInfo.images[4] + '" target="_blank"><img src=' + productInfo.images[4] + '></a></td></table></ul></div></div>' 
     });
     fetch(PRODUCT_INFO_COMMENTS_URL)
-    .then(function(Response)
-    {let comentarios = Response.json();
-        console.log(comentarios)
-    for (let i = 0; i < comentarios.length; i++) {
-    document.getElementById("comentarios").innerHTML = document.getElementById("comentarios").innerHTML + `<div class="card">
-    <div class="card-header">
-      ${comentarios.user}
-    </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-      </blockquote>
-    </div>
-  </div>`
-        
-    }
+    .then(function(respuesta)
+    {return respuesta.json();
     })
-    });
+    .then(function(comentarios)
+    {
+    console.log(comentarios)
+    }
+    )});
