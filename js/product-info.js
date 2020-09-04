@@ -12,11 +12,34 @@ document.addEventListener("DOMContentLoaded", function(e){
         document.getElementById("divcont").innerHTML = '<ul><p class="p1">' + productInfo.category + 
         '</p><li id="producto1"><img src=' + productInfo.images[0] + '><p class="p2">' + productInfo.name +
         '<br>' + productInfo.cost + productInfo.currency + '</p><p class="p3"> Cantidad de Vendidos: ' + productInfo.soldCount + '</p></li><li id="producto1desc"><p class="p">Descripcion</p>'
-        + productInfo.description + '</li><table><td><a href="' + productInfo.images[1] + '" target="_blank"><img src="' + productInfo.images[1] + '"></a></td>' + 
-        '<td><a href="' + productInfo.images[0] + '" target="_blank"><img src=' + productInfo.images[0] + '></a></td>' + 
-        '<td><a href="' + productInfo.images[2] + '" target="_blank"><img src=' + productInfo.images[2] + '></a></td>' + 
-        '<td><a href="' + productInfo.images[3] + '" target="_blank"><img src=' + productInfo.images[3] + '></a></td>' + 
-        '<td><a href="' + productInfo.images[4] + '" target="_blank"><img src=' + productInfo.images[4] + '></a></td></table></ul></div></div>' 
+        + productInfo.description + 
+        `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src=${productInfo.images[0]} class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src=${productInfo.images[1]} class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src=${productInfo.images[2]}  class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+          <img src=${productInfo.images[3]}  class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+        <img src=${productInfo.images[4]}  class="d-block w-100" alt="...">
+      </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>` 
     });
     fetch(PRODUCT_INFO_COMMENTS_URL)
     .then(function(respuesta)
@@ -27,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     console.log(comentarios.length)
     for (let i = 0; i < comentarios.length; i++) {
         const element = comentarios[i];
-        document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="row w-50"><div class="card">
+        document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="card" style="width: 18rem;">
         <div class="card-header">
         ${comentarios[i].score}
         </div>
@@ -38,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function(e){
           </blockquote>
         </div>
       </div>
-      </div>`       
+      `       
     }
     }
     )});
