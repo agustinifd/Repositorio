@@ -24,15 +24,16 @@ document.addEventListener("DOMContentLoaded", function(e){
     })
     .then(function(comentarios)
     {
+        document.getElementById("comentarios") = ""
     for (let i = 0; i < comentarios.length; i++) { 
-    document.getElementById("comentarios").innerHTML = document.getElementById("comentarios") + `<div class="card">
+    document.getElementById("comentarios").innerHTML += `<div class="card">
     <div class="card-header">
       ${comentarios[i].score}
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <p>${comentarios[i].description}</p>
-        <footer class="blockquote-footer"> ${comentarios[i].name} <cite title="Source Title">${comentarios[i].dataTime}</cite></footer>
+        <footer class="blockquote-footer"> ${comentarios[i].name} <cite title="Source Title"> ${comentarios[i].dataTime} </cite></footer>
       </blockquote>
     </div>
   </div>`
