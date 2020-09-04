@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     fetch(PRODUCT_INFO_COMMENTS_URL)
     .then(function(Response)
     {let comentarios = Response.json();
+        console.log(comentarios)
     for (let i = 0; i < comentarios.length; i++) {
     document.getElementById("comentarios").innerHTML = document.getElementById("comentarios").innerHTML + `<div class="card">
     <div class="card-header">
