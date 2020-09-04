@@ -60,7 +60,15 @@ document.addEventListener("DOMContentLoaded", function(e){
           </blockquote>
         </div>
       </div>
-      `;           
+      `;
+      for (let i = 0; i < comentarios.length; i++)
+      { 
+        let htmlContentToAppend = "";
+        for (let i = 0; i < comentarios[i].score;  i++) {
+            htmlContentToAppend += `<span class="fa fa-star checked"></span>`   
+            document.getElementsByClassName("card-header")[i].innerHTML = htmlContentToAppend;    
+        }
+                    
     }
     }
-    )});
+})});
