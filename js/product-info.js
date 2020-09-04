@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     for (let i = 0; i < comentarios.length; i++) {
         const element = comentarios[i];
         document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="card" style="width: 18rem;">
-        <div class="card-header">
+        <div class="card-header"${[i]}>
         ${comentarios[i].score}
         </div>
         <div class="card-body">
@@ -64,15 +64,15 @@ document.addEventListener("DOMContentLoaded", function(e){
       for (let i = 0; i < comentarios.length; i++)
     { 
         if(comentarios[i].score = 1){
-    document.getElementsByClassName("card-header")[i].innerHTML = `<span class="fa fa-star checked"></span>`;}
+    document.getElementsById("card-header"[i]).innerHTML = `<span class="fa fa-star checked"></span>`;}
     if(comentarios[i].score = 2)
-    {document.getElementsByClassName("card-header")[i].innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    {document.getElementsById("card-header"[i]).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
     if(comentarios[i].score = 3)
-    {document.getElementsByClassName("card-header")[i].innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    {document.getElementsById("card-header"[i]).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
     if(comentarios[i].score = 4)
-    {document.getElementsByClassName("card-header")[i].innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    {document.getElementsById("card-header"[i]).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
     if(comentarios[i].score = 5)
-    {document.getElementsByClassName("card-header")[i].innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    {document.getElementsById("card-header"[i]).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
         ;}}})})
        
 
