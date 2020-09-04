@@ -61,7 +61,13 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>
       </div>
       `;
-      for (let i = 0; i < comentarios.length; i++)
+      MostrarEstrellas();
+    }})
+        
+       
+function MostrarEstrellas()
+{
+  for (let i = 0; i < comentarios.length; i++)
     { 
         if(comentarios[i].score = 1){
     document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span>`;}
@@ -73,6 +79,4 @@ document.addEventListener("DOMContentLoaded", function(e){
     {document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
     if(comentarios[i].score = 5)
     {document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
-        ;}}})})
-       
-
+}}});
