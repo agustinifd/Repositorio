@@ -1,23 +1,6 @@
 /////// LOGIN CHECK ////////
-var firebaseConfig = {
-    apiKey: "AIzaSyAIcCtwoX_ch7-d6ibphLJcyhiKgkDwSWk",
-    authDomain: "prueba-oauth-286403.firebaseapp.com",
-    databaseURL: "https://prueba-oauth-286403.firebaseio.com",
-    projectId: "prueba-oauth-286403",
-    storageBucket: "prueba-oauth-286403.appspot.com",
-    messagingSenderId: "829078339573",
-    appId: "1:829078339573:web:c23f82ba4ba965ab7eaabc",
-    measurementId: "G-FT20SWH0YN"
-  };
 
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  const auth = firebase.auth();
-  const fs = firebase.firestore();
-  let asd = ""
-  
 const sinlogear = document.querySelectorAll(".sinlogear")
 const logeado = document.querySelectorAll(".logeado")
 
