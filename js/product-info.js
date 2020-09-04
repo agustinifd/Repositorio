@@ -16,19 +16,19 @@ document.addEventListener("DOMContentLoaded", function(e){
         `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src=${productInfo.images[0]} class="d-block w-100" alt="...">
+            <img src=${productInfo.images[0]} class="d-block w-40%" alt="...">
           </div>
           <div class="carousel-item">
-            <img src=${productInfo.images[1]} class="d-block w-100" alt="...">
+            <img src=${productInfo.images[1]} class="d-block w-40%" alt="...">
           </div>
           <div class="carousel-item">
-            <img src=${productInfo.images[2]}  class="d-block w-100" alt="...">
+            <img src=${productInfo.images[2]}  class="d-block w-40%" alt="...">
           </div>
           <div class="carousel-item">
-          <img src=${productInfo.images[3]}  class="d-block w-100" alt="...">
+          <img src=${productInfo.images[3]}  class="d-block w-40%" alt="...">
         </div>
         <div class="carousel-item">
-        <img src=${productInfo.images[4]}  class="d-block w-100" alt="...">
+        <img src=${productInfo.images[4]}  class="d-block w-40%" alt="...">
       </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     console.log(comentarios.length)
     for (let i = 0; i < comentarios.length; i++) {
         const element = comentarios[i];
-        document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="card" style="width: 18rem;">
+        document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="card" style="width: 18rem; align">
         <div class="card-header">
         ${comentarios[i].score}
         </div>
