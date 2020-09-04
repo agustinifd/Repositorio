@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     console.log(comentarios.length)
     for (let i = 0; i < comentarios.length; i++) {
         const element = comentarios[i];
-        document.getElementById("comentarios").innerHTML = `<div class="card">
+        document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="row"><div class="card">
         <div class="card-header">
         ${comentarios[i].score}
         </div>
@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             <footer class="blockquote-footer">${comentarios[i].user}<cite title="Source Title">${comentarios[i].dateTime}</cite></footer>
           </blockquote>
         </div>
+      </div>
       </div>`       
     }
     }
