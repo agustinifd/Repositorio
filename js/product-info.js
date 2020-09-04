@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <p>${comentarios[i].description}</p>
-        <footer class="blockquote-footer">${comentarios[i].name}<cite title="Source Title">${comentarios[i].dataTime}</cite></footer>
+        <footer class="blockquote-footer"> ${comentarios[i].name} <cite title="Source Title">${comentarios[i].dataTime}</cite></footer>
       </blockquote>
     </div>
   </div>`
