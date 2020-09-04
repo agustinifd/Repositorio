@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     })
     .then(function(comentarios)
     {
-    console.log(comentarios.length)
     for (let i = 0; i < comentarios.length; i++) {
         const element = comentarios[i];
         document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="card" style="width: 18rem;">
@@ -57,11 +56,11 @@ document.addEventListener("DOMContentLoaded", function(e){
         <div class="card-body">
           <blockquote class="blockquote mb-0">
             <p>${comentarios[i].description}</p>
-            <footer class="blockquote-footer">${comentarios[i].user}<cite title="Source Title">Publicado:${comentarios[i].dateTime}</cite></footer>
+            <footer class="blockquote-footer">${comentarios[i].user}<cite title="Source Title"><br>Publicado:${comentarios[i].dateTime}</cite></footer>
           </blockquote>
         </div>
       </div>
-      `       
+      `;           
     }
     }
     )});
