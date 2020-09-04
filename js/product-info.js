@@ -25,5 +25,10 @@ document.addEventListener("DOMContentLoaded", function(e){
     .then(function(comentarios)
     {
     console.log(comentarios.length)
+    for (let i = 0; i < comentarios.length; i++) {
+        const element = comentarios[i];
+        document.getElementById("comentarios").innerHTML = comentarios[i].name + comentarios[i].description + comentarios[i].score + comentarios[i] + dateTime;
+        
+    }
     }
     )});
