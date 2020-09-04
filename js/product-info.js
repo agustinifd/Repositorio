@@ -22,20 +22,8 @@ document.addEventListener("DOMContentLoaded", function(e){
     .then(function(respuesta)
     {return respuesta.json();
     })
-    .then(function(comentariosarray)
+    .then(function(comentarios)
     {
-        document.getElementById("comentarios") = ""
-    for (let i = 0; i < comentariosarray.length; i++) { 
-    document.getElementById("comentarios").innerHTML += `<div class="card">
-    <div class="card-header">
-      ${comentariosarray[i].score}
-    </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>${comentarios[i].description}</p>
-        <footer class="blockquote-footer"> ${comentariosarray[i].name} <cite title="Source Title"> ${comentariosarray[i].dataTime} </cite></footer>
-      </blockquote>
-    </div>
-  </div>`
-    }}
+    console.log(comentarios.length)
+    }
     )});
