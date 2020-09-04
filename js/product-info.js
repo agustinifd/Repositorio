@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     console.log(comentarios.length)
     for (let i = 0; i < comentarios.length; i++) {
         const element = comentarios[i];
-        document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="row"><div class="card">
+        document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="row w-50"><div class="card">
         <div class="card-header">
         ${comentarios[i].score}
         </div>
