@@ -62,13 +62,17 @@ document.addEventListener("DOMContentLoaded", function(e){
       </div>
       `;
       for (let i = 0; i < comentarios.length; i++)
-      { 
-        let htmlContentToAppend = "";
-        for (let i = 0; i < comentarios[i].length;  i++) {
-            htmlContentToAppend += `<span class="fa fa-star checked"></span>`   
-            document.getElementsByClassName("card-header")[i].innerHTML = htmlContentToAppend;    
-        }
-                    
-    }
-    }
-})});
+    { 
+        if(comentarios[i].score = 1){
+    document.getElementsByClassName("card-header")[i].innerHTML = `<span class="fa fa-star checked"></span>`;}
+    if(comentarios[i].score = 2)
+    {document.getElementsByClassName("card-header")[i].innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    if(comentarios[i].score = 3)
+    {document.getElementsByClassName("card-header")[i].innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    if(comentarios[i].score = 4)
+    {document.getElementsByClassName("card-header")[i].innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+    if(comentarios[i].score = 5)
+    {document.getElementsByClassName("card-header")[i].innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
+        ;}}})})
+       
+
