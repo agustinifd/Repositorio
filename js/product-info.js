@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       for (let i = 0; i < comentarios.length; i++)
       { 
         let htmlContentToAppend = "";
-        for (let i = 0; i < comentarios[i].score;  i++) {
+        for (let i = 0; i < comentarios[i].length;  i++) {
             htmlContentToAppend += `<span class="fa fa-star checked"></span>`   
             document.getElementsByClassName("card-header")[i].innerHTML = htmlContentToAppend;    
         }
