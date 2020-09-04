@@ -1,5 +1,12 @@
-
-
+.btn-secondary22
+{
+   margin-left:35em;
+  margin-top:15em;
+}
+li
+{
+  list-style: none;
+}
 .modal-content
 {
   background-image: url("img/login.png");
