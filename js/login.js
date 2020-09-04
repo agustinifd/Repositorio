@@ -1,5 +1,4 @@
 /////// LOGIN CHECK ////////
-
 const sinlogear = document.querySelectorAll(".sinlogear")
 const logeado = document.querySelectorAll(".logeado")
 
