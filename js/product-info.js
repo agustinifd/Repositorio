@@ -22,18 +22,18 @@ document.addEventListener("DOMContentLoaded", function(e){
     .then(function(respuesta)
     {return respuesta.json();
     })
-    .then(function(comentarios)
+    .then(function(comentariosarray)
     {
         document.getElementById("comentarios") = ""
-    for (let i = 0; i < comentarios.length; i++) { 
+    for (let i = 0; i < comentariosarray.length; i++) { 
     document.getElementById("comentarios").innerHTML += `<div class="card">
     <div class="card-header">
-      ${comentarios[i].score}
+      ${comentariosarray[i].score}
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <p>${comentarios[i].description}</p>
-        <footer class="blockquote-footer"> ${comentarios[i].name} <cite title="Source Title"> ${comentarios[i].dataTime} </cite></footer>
+        <footer class="blockquote-footer"> ${comentariosarray[i].name} <cite title="Source Title"> ${comentariosarray[i].dataTime} </cite></footer>
       </blockquote>
     </div>
   </div>`
