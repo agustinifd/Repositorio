@@ -65,8 +65,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     }})});
 function comentar()
 {
-  var time = new Date();
-
+  let time = new Date();
   let estrellita = `<span class="fa fa-star checked"></span>`
   document.getElementById("comentarios").innerHTML = document.getElementById("comentarios").innerHTML + `<div class="card" style="width: 18rem;">
   <div class="card-header">
@@ -75,7 +74,7 @@ function comentar()
   <div class="card-body">
     <blockquote class="blockquote mb-0">
       <p>${document.getElementById("comentarionuevo").value}</p>
-      <footer class="blockquote-footer">${document.getElementById("profile").value}<cite title="Source Title"><br>Publicado:${ time.toLocaleString('es-ES', { hour: 'numeric', hour12: true })}</cite></footer>
+      <footer class="blockquote-footer">${document.getElementById("profile").value}<cite title="Source Title"><br>Publicado:${ time.toLocaleString('es-ES', {year: 'numeric', month: 'numeric', day: 'numeric',  hour: 'numeric', minute: 'numeric', second: 'numeric', hour24: true })}</cite></footer>
     </blockquote>
   </div>
 </div>`;
