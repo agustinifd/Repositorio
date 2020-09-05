@@ -28,19 +28,19 @@ document.addEventListener("DOMContentLoaded", function(e){
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src=${productInfo.images[0]} class="d-block w-40%" alt="...">
+            <img src=${productInfo.images[0]} class="d-block w-20%" alt="...">
           </div>
           <div class="carousel-item">
-            <img src=${productInfo.images[1]} class="d-block w-40%" alt="...">
+            <img src=${productInfo.images[1]} class="d-block w-20%" alt="...">
           </div>
           <div class="carousel-item">
-            <img src=${productInfo.images[2]}  class="d-block w-40%" alt="...">
+            <img src=${productInfo.images[2]}  class="d-block w-20%" alt="...">
           </div>
           <div class="carousel-item">
-          <img src=${productInfo.images[3]}  class="d-block w-40%" alt="...">
+          <img src=${productInfo.images[3]}  class="d-block w-20%" alt="...">
         </div>
         <div class="carousel-item">
-        <img src=${productInfo.images[4]}  class="d-block w-40%" alt="...">
+        <img src=${productInfo.images[4]}  class="d-block w-20%" alt="...">
       </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
