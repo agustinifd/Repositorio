@@ -94,7 +94,14 @@ font-family:'proxima-nova';
 
 <div id="comentarios">
 </div>
-
+<div class="container">Comenta y valora el producto<br><textarea id="comentarionuevo" rows="4" cols="50">
+ </textarea><select id="slct">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select><span class="fa fa-star checked"></span><br><input type="button" id="btncalificar" value="Calificar"></div>
 
 
 
@@ -111,6 +118,7 @@ font-family:'proxima-nova';
     <div class="lds-ring">
     </div>
   </div>
+ 
   <!--- FIREBASE --->
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
