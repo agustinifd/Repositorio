@@ -1,3 +1,5 @@
+document.getElementById("profile") = style.display = "block";
+
 /////// LOGIN CHECK ////////
 
 const sinlogear = document.querySelectorAll(".sinlogear")
