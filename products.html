@@ -52,9 +52,9 @@ text-decoration: none;
     <div class="col text-right" id="botones">
       <input type="search" value="" placeholder="Ingrese su busqueda" id="busqueta">
       <input type="button" value="BUSCAR" id="btnbuscar">
-      <input type="button" onclick="ordenarrlv()" value="Revelancia">
-      <input type="button" onclick="ordenardsc()" value="Mayor precio">
-      <input type="button" onclick="ordenarasc()" value="Menor precio">
+      <input type="button" id="btnrel" onclick="ordenarrlv()" value="Revelancia">
+      <input type="button" id="btndsc" onclick="ordenardsc()" value="Mayor precio">
+      <input type="button" id="btnasc" onclick="ordenarasc()" value="Menor precio">
       <input type="number" placeholder="Indique el precio minimo que desea filtar" value="0" id="txtfiltromin">
       <input type="number" placeholder="Indique el precio maximo que desea filtar" value="15000" id="txtfiltromax">
       <input type="button" onclick="filtro()" value="Filtrar por $">
