@@ -66,7 +66,7 @@ for (let i = 0; i < 4; i++)
     data.sort(function(a, b)
     {return a.soldCount < b.soldCount;});
     listafinalproductos = "";
-    console.log(data.length);
+    console.log(data);
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
     listafinalproductos += `<a class="link" href="product-info.html"><li href="product-info.html" class="` + i + `">` + `<div class="row">
@@ -83,7 +83,7 @@ for (let i = 0; i < data.length; i++) {
 </div>` + "</li></a>"};
 
 document.getElementById("cat-list-container").innerHTML = listafinalproductos;
-console.log("entro al for");
+
 })};
 //////////////////////// ORDEN DESENDIENTE /////////////////
 function ordenardsc()
