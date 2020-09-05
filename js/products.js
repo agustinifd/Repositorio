@@ -29,7 +29,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 //////////// BUSCADOR //////////
 
 busqueta.addEventListener("keypress", buscador);
-btnbuscar.addEventListener("click", buscador);
+btnrel.addEventListener("click", ordenarrlv);
+btndsc.addEventListener("click", ordenardsc);
+btnasc.addEventListener("click", ordenarasc);
+
 ///////////////// CODIGO BUSCADOR ///////////////////
 
 
