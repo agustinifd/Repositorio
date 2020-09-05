@@ -67,7 +67,7 @@ for (let i = 0; i < 4; i++)
     data.sort(function(a, b)
     {return a.soldCount < b.soldCount;});
     listafinalproductos = "";
-    console.log("la promesa ingreso")
+    console.log(data.length)
 for (let i = 0; i < data.length; i++) {
     const element = data[i];
     listafinalproductos += `<a class="link" href="product-info.html"><li href="product-info.html" class="` + i + `">` + `<div class="row">
