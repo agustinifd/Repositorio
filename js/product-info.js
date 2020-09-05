@@ -9,11 +9,23 @@ document.addEventListener("DOMContentLoaded", function(e){
     })
     .then(function(productInfo)
     {
-        document.getElementById("divcont").innerHTML = '<ul><p class="p1">' + productInfo.category + 
-        '</p><li id="producto1"><img src=' + productInfo.images[0] + '><p class="p2">' + productInfo.name +
-        '<br>' + productInfo.cost + productInfo.currency + '</p><p class="p3"> Cantidad de Vendidos: ' + productInfo.soldCount + '</p></li><li id="producto1desc"><p class="p">Descripcion</p>'
-        + productInfo.description + 
-        `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        document.getElementById("divcont").innerHTML = `<div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${productInfo.name}</h5>
+          <p class="card-text">Descripción:${productInfo.description}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cantidad de Vendidos: ' + ${productInfo.soldCount}</li>
+          <li class="list-group-item">A solo ${productInfo.cost}${productInfo.currency}</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src=${productInfo.images[0]} class="d-block w-40%" alt="...">
