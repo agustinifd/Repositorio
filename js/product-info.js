@@ -73,7 +73,7 @@ function comentar()
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
-      <p>${getElementById("comentarionuevo").value}</p>
+      <p>${docuement.getElementById("comentarionuevo").value}</p>
       <footer class="blockquote-footer">${document.getElementById("profile")}<cite title="Source Title"><br>Publicado:</cite></footer>
     </blockquote>
   </div>
