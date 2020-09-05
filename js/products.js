@@ -60,7 +60,6 @@ for (let i = 0; i < 4; i++)
 ////////////////// ORDEN RELEVANCIA////////////////////////
     function ordenarrlv()
 {   
-    console.log("elbotonfunca")
     fetch(PRODUCTS_URL)
     .then(data => data.json())
     .then(data =>{
