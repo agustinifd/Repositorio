@@ -74,18 +74,23 @@ text-decoration: none;
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
     </footer>
+    
     <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+    <!--- FIREBASE --->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+
+  <!---CODIGO DE JS--->
     <script src="https://agustinifd.github.io/Repositorio/js/jquery-3.4.1.min.js"></script>
     <script src="https://agustinifd.github.io/Repositorio/js/bootstrap.bundle.min.js"></script>
     <script src="https://agustinifd.github.io/Repositorio/js/init.js"></script>
     <script src="https://agustinifd.github.io/Repositorio/js/products.js"></script>
-    <script>
-      var remplazo = document.getElementById("profile")
-        function remplazito(){
-          if (sessionStorage.length > 0){
-          remplazo.innerText = sessionStorage.getItem("nombre")}
-          else{ remplazo.innerText = "Anonimo"}
-        };
-        remplazito();</script>
+
   </body>
 </html>
