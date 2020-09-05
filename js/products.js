@@ -66,6 +66,7 @@ for (let i = 0; i < 4; i++)
     fetch(PRODUCTS_URL)
     .then(RLV => RLV.json())
     .then(RLV =>{
+    console.log(RLV);
     RLV.sort(function(a, b)
     {return a.soldCount < b.soldCount;});
     listafinalproductos = "";
