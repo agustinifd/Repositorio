@@ -25,15 +25,15 @@ const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
   firebase.analytics();
   const auth = firebase.auth();
   const fs = firebase.firestore();
-  let asd = ""
+  let asd = "";
 
- var remplazo = document.getElementById("profile")
-    function remplazito(){
-      if (sessionStorage.length > 0){
-      remplazo.innerText = sessionStorage.getItem("nombre")}
-      else{ remplazo.innerText = "Anonimo"}
-    };
-    remplazito();
+  var remplazo = document.getElementById("profile");
+  function remplazito(){
+    if (sessionStorage.length > 0){
+    remplazo.innerText = sessionStorage.getItem("nombre");}
+    else{ remplazo.innerText = "Anonimo";}
+  };
+
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -72,4 +72,5 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  remplazito();
 });
