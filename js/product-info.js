@@ -47,11 +47,12 @@ document.addEventListener("DOMContentLoaded", function(e){
     })
     .then(function(comentarios)
     {
+      let estrellita = `<span class="fa fa-star checked"></span>`
     for (let i = 0; i < comentarios.length; i++) {
         const element = comentarios[i];
         document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="card" style="width: 18rem;">
-        <div class="card-header${i}">
-        ${comentarios[i].score}
+        <div class="card-header">
+        ${estrellita.repeat(comentarios[i].score)}
         </div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
@@ -61,22 +62,6 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>
       </div>
       `;
-      MostrarEstrellas();
     }})});
-        
-       
-function MostrarEstrellas()
-{
-  for (let i = 0; i < comentarios.length; i++)
-    { 
-        if(comentarios[i].score = 1){
-    document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span>`;}
-    if(comentarios[i].score = 2)
-    {document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
-    if(comentarios[i].score = 3)
-    {document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
-    if(comentarios[i].score = 4)
-    {document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
-    if(comentarios[i].score = 5)
-    {document.getElementById(`"card-header` + i +`"`).innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>`;}
-}};
+
+
