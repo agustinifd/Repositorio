@@ -10,15 +10,15 @@ document.addEventListener("DOMContentLoaded", function(e){
     .then(function(productInfo)
     {
         document.getElementById("divcont").innerHTML = `<div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <img src=${productInfo.images[0]} class="card-img-top" >
         <div class="card-body">
           <h5 class="card-title">${productInfo.name}</h5>
           <p class="card-text">Descripción:${productInfo.description}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cantidad de Vendidos: ' + ${productInfo.soldCount}</li>
+          <li class="list-group-item">Cantidad de Vendidos: '${productInfo.soldCount}</li>
           <li class="list-group-item">A solo ${productInfo.cost}${productInfo.currency}</li>
-          <li class="list-group-item">Vestibulum at eros</li>
+          <li class="list-group-item">${productInfo.relatedProducts}</li>
         </ul>
         <div class="card-body">
           <a href="#" class="card-link">Card link</a>
