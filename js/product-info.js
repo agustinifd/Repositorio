@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function(e){
           <a href="#" class="card-link">Another link</a>
         </div>
       </div>
+      <br>
+      <br>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -62,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       let estrellita = `<span class="fa fa-star checked"></span>`
     for (let i = 0; i < comentarios.length; i++) {
         const element = comentarios[i];
-        document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="card" style="width: 18rem;">
+        document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="card grid-item" style="width: 18rem;">
         <div class="card-header">
         ${estrellita.repeat(comentarios[i].score)}
         </div>
