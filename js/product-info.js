@@ -81,7 +81,7 @@ function comentar()
 {
   let time = new Date();
   let estrellita = `<span class="fa fa-star checked"></span>`
-  document.getElementById("comentarios").innerHTML = document.getElementById("comentarios").innerHTML + `<div class="card" style="width: 18rem;">
+  document.getElementById("comentarios").innerHTML = document.getElementById("comentarios").innerHTML + `<div class="card grid-item" style="width: 18rem;">
   <div class="card-header">
   ${estrellita.repeat(document.getElementById("slct").value)}
   </div>
