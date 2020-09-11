@@ -4,17 +4,18 @@
 document.getElementById("btncalificar").addEventListener("click",comentar)
 document.addEventListener("DOMContentLoaded", function(e){
   fetch("https://japdevdep.github.io/ecommerce-api/product/all.json")
-  .then(function(response)
-  {
-    return response.json();
-  })
-  .then(function(relates)
-  {
-  fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
+    .then(function(response)
+    {return response.json();
+    })
+    .then(function(relates)
+    {
+    fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
+    .then(function(response)
+    {return response.json();
+    })
     .then(function(productInfo)
     {
-     
-        document.getElementById("divcont").innerHTML += `<div class="card" style="width: 40rem;">
+        document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
         <img src=${productInfo.images[0]} class="card-img-top" >
         <div class="card-body">
           <h5 class="card-title">${productInfo.name}</h5>
@@ -25,7 +26,11 @@ document.addEventListener("DOMContentLoaded", function(e){
           <li class="list-group-item">A solo ${productInfo.cost}${productInfo.currency}</li>
           <li class="list-group-item">${productInfo.relatedProducts}</li>
         </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
         </div>
+      </div>
       <br>
       <br>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -55,23 +60,29 @@ document.addEventListener("DOMContentLoaded", function(e){
           <span class="sr-only">Next</span>
         </a>
       </div>`;
-      for (let i = 0; i < productInfo.relatedProducts.length; i++) {
-        const element = productInfo.relatedProducts[i];
-        document.getElementById("divcont").innerHTML += `<div class="card" style="width: 40rem;">
-        <img src=${relates[productInfo.relatedProducts[i]].imgSrc} class="card-img-top" >
-        <div class="card-body">
-          <h5 class="card-title">${relates[productInfo.relatedProducts[i]].name}</h5>
-          <p class="card-text">Descripción:${relates[productInfo.relatedProducts[i]].description}</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cantidad de Vendidos: '${relates[productInfo.relatedProducts[i]].soldCount}</li>
-          <li class="list-group-item">A solo ${relates[productInfo.relatedProducts[i]].cost}${relates[productInfo.relatedProducts[i]].currency}</li>
-          <li class="list-group-item"><a href="https://agustinifd.github.io/Repositorio/product-info.html">Conocelo aqui!</a></li>
-        </ul>
-        </div>`;
+      for (let i= 0; i < relates.length; i++) {
+        const element = relates[i];
+        console.log(relates[productInfo.relatedProducts[i]].name)
       }
-    })});
+      
+      //document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
+  //    <img src=${productInfo.images[0]} class="card-img-top" >
+    //  <div class="card-body">
+     //   <h5 class="card-title">${productInfo.name}</h5>
+      //  <p class="card-text">Descripción:${productInfo.description}</p>
+      //</div>
+      //<ul class="list-group list-group-flush">
+      //  <li class="list-group-item">Cantidad de Vendidos: '${productInfo.soldCount}</li>
+      //  <li class="list-group-item">A solo ${productInfo.cost}${productInfo.currency}</li>
+      //  <li class="list-group-item">${productInfo.relatedProducts}</li>
+     // </ul>
+     // <div class="card-body">
+      //  <a href="#" class="card-link">Card link</a>
+      //  <a href="#" class="card-link">Another link</a>
+     // </div>
+  // </div>
 
+    })});
     fetch(PRODUCT_INFO_COMMENTS_URL)
     .then(function(respuesta)
     {return respuesta.json();
