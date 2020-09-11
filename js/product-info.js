@@ -7,10 +7,6 @@ document.addEventListener("DOMContentLoaded", function(e){
   .then(function(relate)
   {return relate.json();
   })
-  .then(function(relate)
-  {
-      console.log(relate);
-  });
   fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
     .then(function(response)
     {return response.json();
@@ -28,11 +24,7 @@ document.addEventListener("DOMContentLoaded", function(e){
           <li class="list-group-item">A solo ${productInfo.cost}${productInfo.currency}</li>
           <li class="list-group-item">${productInfo.relatedProducts}</li>
         </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
         </div>
-      </div>
       <br>
       <br>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -61,7 +53,12 @@ document.addEventListener("DOMContentLoaded", function(e){
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>` 
+      </div>`;
+
+      for (let i = 0; i < productInfo.relatedProducts.length; i++) {
+        const element = productInfo.relatedProducts[i];
+      console.log(productInfo.relatedProducts[i]);
+      }
     });
     fetch(PRODUCT_INFO_COMMENTS_URL)
     .then(function(respuesta)
