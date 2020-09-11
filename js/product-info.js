@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   fetch("https://japdevdep.github.io/ecommerce-api/product/all.json")
   .then(function(relate)
   {
-    relate = response.json();
+    relate = relate.json();
     return relate.json();
   })
   fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
