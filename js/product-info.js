@@ -3,7 +3,15 @@
 //elementos HTML presentes.
 document.getElementById("btncalificar").addEventListener("click",comentar)
 document.addEventListener("DOMContentLoaded", function(e){
-    fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
+  fetch("https://japdevdep.github.io/ecommerce-api/product/all.json")
+  .then(function(relate)
+  {return relate.json();
+  })
+  .then(function(relate)
+  {
+      console.log(relate);
+  });
+  fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
     .then(function(response)
     {return response.json();
     })

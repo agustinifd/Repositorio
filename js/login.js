@@ -36,6 +36,7 @@ Registroform.addEventListener("submit", (e) => {
 })
 
 ///// ACCESO USUARIO /////
+
 const Accesoform = document.querySelector("#Acceso-form");
 Accesoform.addEventListener("submit", e => {
     e.preventDefault();  
@@ -48,7 +49,6 @@ Accesoform.addEventListener("submit", e => {
     sessionStorage.setItem("nombre", Accesoemail)
     Accesoform.reset();
     $('#AccesoModal').modal('hide');
-    
     window.location.href = "https://agustinifd.github.io/Repositorio/home.html";
     })
     .catch(function(error) {
