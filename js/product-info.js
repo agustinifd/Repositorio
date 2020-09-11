@@ -63,35 +63,12 @@ document.addEventListener("DOMContentLoaded", function(e){
       for (let i= 0; i < todos.length; i++) {
          ////BUSCA DE 0 HASTA LA CANTIDAD DE ELEMENTOS QUE HAY EN TODOS LOS PRODUCTOS
         const element = todos[i];
-        if ((productInfo.relatedProducts[i]) === [i])
-        {console.log(todos[productInfo.relatedProducts[i]].name);
-        console.log("1")}
-        if ((productInfo.relatedProducts[i]) == [i])
-        {console.log(todos[productInfo.relatedProducts[i]].name);
-        console.log("2")}
         if ((productInfo.relatedProducts[i]) = [i])
-        {console.log(todos[productInfo.relatedProducts[i]].name);
-        console.log("3")}
+        {
         ////ENTRA A LA LISTA DE TODOS LOS AUTOS 
-      }
-      
-      //document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
-  //    <img src=${productInfo.images[0]} class="card-img-top" >
-    //  <div class="card-body">
-     //   <h5 class="card-title">${productInfo.name}</h5>
-      //  <p class="card-text">Descripción:${productInfo.description}</p>
-      //</div>
-      //<ul class="list-group list-group-flush">
-      //  <li class="list-group-item">Cantidad de Vendidos: '${productInfo.soldCount}</li>
-      //  <li class="list-group-item">A solo ${productInfo.cost}${productInfo.currency}</li>
-      //  <li class="list-group-item">${productInfo.relatedProducts}</li>
-     // </ul>
-     // <div class="card-body">
-      //  <a href="#" class="card-link">Card link</a>
-      //  <a href="#" class="card-link">Another link</a>
-     // </div>
-  // </div>
-
+           
+      document.getElementById("divcont").innerHTML += `<div class="card" style="width: 15rem;"> <img src=${todos[productInfo.relatedProducts[i]].imgSrc} class="card-img-top" > <div class="card-body"> <h5 class="card-title">${todos[productInfo.relatedProducts[i]].name}</h5>  <p class="card-text">Descripción:${todos[productInfo.relatedProducts[i]].description}</p></div><ul class="list-group list-group-flush"> <li class="list-group-item">Cantidad de Vendidos: '${todos[productInfo.relatedProducts[i]].soldCount}</li>  <li class="list-group-item">A solo ${todos[productInfo.relatedProducts[i]].cost}${todos[productInfo.relatedProducts[i]].currency}</li></ul> <div class="card-body"><a href="#" class="card-link">Conocelo Aqui</a> </div> </div>`;
+    }}
     })});
     fetch(PRODUCT_INFO_COMMENTS_URL)
     .then(function(respuesta)
