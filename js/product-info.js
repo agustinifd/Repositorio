@@ -8,11 +8,9 @@ document.addEventListener("DOMContentLoaded", function(e){
   {
     return response.json();
   })
-
+  .then(function(relates)
+  {
   fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
-    .then(function(relates)
-    {
-    console.log(relates)
     .then(function(productInfo)
     {
      
@@ -57,10 +55,8 @@ document.addEventListener("DOMContentLoaded", function(e){
           <span class="sr-only">Next</span>
         </a>
       </div>`;
-         console.log(relates);
       for (let i = 0; i < productInfo.relatedProducts.length; i++) {
         const element = productInfo.relatedProducts[i];
-        console.log(relates);
         document.getElementById("divcont").innerHTML += `<div class="card" style="width: 40rem;">
         <img src=${relates[productInfo.relatedProducts[i]].imgSrc} class="card-img-top" >
         <div class="card-body">
