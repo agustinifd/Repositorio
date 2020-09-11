@@ -1,6 +1,7 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+var relate = [];
 document.getElementById("btncalificar").addEventListener("click",comentar)
 document.addEventListener("DOMContentLoaded", function(e){
   fetch("https://japdevdep.github.io/ecommerce-api/product/all.json")
@@ -10,7 +11,9 @@ document.addEventListener("DOMContentLoaded", function(e){
   })
   fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
     .then(function(response)
-    {return response.json();
+    {
+      relate = response.json();
+      return response.json();
     })
     .then(function(productInfo)
     {
