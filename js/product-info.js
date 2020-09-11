@@ -61,11 +61,11 @@ document.addEventListener("DOMContentLoaded", function(e){
           <span class="sr-only">Next</span>
         </a>
       </div>`;
-      console.log(relates);
+      
       for (let i = 0; i < productInfo.relatedProducts.length; i++) {
         const element = productInfo.relatedProducts[i];
-        console.log(relates);
-        document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
+        
+        document.getElementById("divcont").innerHTML += `<div class="card" style="width: 20rem;">
         <img src=${relates[productInfo.relatedProducts[i]].imgSrc} class="card-img-top" >
         <div class="card-body">
           <h5 class="card-title">${relates[productInfo.relatedProducts[i]].name}</h5>
