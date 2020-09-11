@@ -24,12 +24,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Cantidad de Vendidos: ${productInfo.soldCount}</li>
           <li class="list-group-item">A solo ${productInfo.cost}${productInfo.currency}</li>
-          <li class="list-group-item">${productInfo.relatedProducts}</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
+          </ul>
       </div>
       <br>
       <br>
