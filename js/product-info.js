@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>
       </div>
       `;
-    }})});
+    }})})});
 function comentar()
 {
   let time = new Date();
@@ -110,5 +110,5 @@ function comentar()
     </blockquote>
   </div>
 </div>`;
-}});
+};
 
