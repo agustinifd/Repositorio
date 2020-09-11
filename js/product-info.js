@@ -5,7 +5,9 @@ document.getElementById("btncalificar").addEventListener("click",comentar)
 document.addEventListener("DOMContentLoaded", function(e){
   fetch("https://japdevdep.github.io/ecommerce-api/product/all.json")
   .then(function(relate)
-  {return relate.json();
+  {
+  let relate = relate.json();
+    return relate.json();
   })
   fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
     .then(function(response)
