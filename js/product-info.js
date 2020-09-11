@@ -1,7 +1,6 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-var relates = "";
 document.getElementById("btncalificar").addEventListener("click",comentar)
 document.addEventListener("DOMContentLoaded", function(e){
   fetch("https://japdevdep.github.io/ecommerce-api/product/all.json")
@@ -9,10 +8,9 @@ document.addEventListener("DOMContentLoaded", function(e){
   {
     return response.json();
   })
-  .then(function(relate)
+  .then(function(related)
   {
-    relates = relate;
-  })
+  
   fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
     .then(function(response)
     {
@@ -63,11 +61,10 @@ document.addEventListener("DOMContentLoaded", function(e){
           <span class="sr-only">Next</span>
         </a>
       </div>`;
-
+      console.log(relates);
       for (let i = 0; i < productInfo.relatedProducts.length; i++) {
         const element = productInfo.relatedProducts[i];
         console.log(relates);
-        console.log(relates[i]);
         document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
         <img src=${relates[productInfo.relatedProducts[i]].imgSrc} class="card-img-top" >
         <div class="card-body">
@@ -81,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         </ul>
         </div>`;
       }
-    });
+    })});
     fetch(PRODUCT_INFO_COMMENTS_URL)
     .then(function(respuesta)
     {return respuesta.json();
