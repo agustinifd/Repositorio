@@ -63,9 +63,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       for (let i= 0; i < todos.length; i++) {
          ////BUSCA DE 0 HASTA LA CANTIDAD DE ELEMENTOS QUE HAY EN TODOS LOS PRODUCTOS
         const element = todos[i];
-        console.log(todos[i])
-        console.log(productInfo.relatedProducts[i])
-        if ((productInfo.relatedProducts[i]) = todos[i])
+        if ((productInfo.relatedProducts[i]) != undefined)
         {
         ////ENTRA A LA LISTA DE TODOS LOS AUTOS 
          
