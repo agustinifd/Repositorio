@@ -1,13 +1,13 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
- 
 document.getElementById("btncalificar").addEventListener("click",comentar)
 document.addEventListener("DOMContentLoaded", function(e){
   fetch("https://japdevdep.github.io/ecommerce-api/product/all.json")
   .then(function(relate)
   {
-  let relate = relate.json();
+    return relate.json();
+  })
   fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
     .then(function(response)
     {return response.json();
@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 
       for (let i = 0; i < productInfo.relatedProducts.length; i++) {
         const element = productInfo.relatedProducts[i];
+        console.log(relate);
+        console.log(relate[i]);
         document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
         <img src=${relate[productInfo.relatedProducts[i]].imgSrc} class="card-img-top" >
         <div class="card-body">
@@ -93,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>
       </div>
       `;
-    }})})});
+    }})});
 function comentar()
 {
   let time = new Date();
@@ -109,5 +111,5 @@ function comentar()
     </blockquote>
   </div>
 </div>`;
-};
+}
 
