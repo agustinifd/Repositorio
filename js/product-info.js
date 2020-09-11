@@ -8,15 +8,11 @@ document.addEventListener("DOMContentLoaded", function(e){
   {
     return response.json();
   })
-  .then(function(related)
-  {
-  
+
   fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
-    .then(function(response)
+    .then(function(relates)
     {
-     
-      return response.json();
-    })
+    console.log(relates)
     .then(function(productInfo)
     {
      
@@ -61,11 +57,11 @@ document.addEventListener("DOMContentLoaded", function(e){
           <span class="sr-only">Next</span>
         </a>
       </div>`;
-      
+         console.log(relates);
       for (let i = 0; i < productInfo.relatedProducts.length; i++) {
         const element = productInfo.relatedProducts[i];
-        
-        document.getElementById("divcont").innerHTML += `<div class="card" style="width: 20rem;">
+        console.log(relates);
+        document.getElementById("divcont").innerHTML += `<div class="card" style="width: 40rem;">
         <img src=${relates[productInfo.relatedProducts[i]].imgSrc} class="card-img-top" >
         <div class="card-body">
           <h5 class="card-title">${relates[productInfo.relatedProducts[i]].name}</h5>
@@ -79,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>`;
       }
     })});
+
     fetch(PRODUCT_INFO_COMMENTS_URL)
     .then(function(respuesta)
     {return respuesta.json();
