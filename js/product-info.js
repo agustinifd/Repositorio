@@ -63,8 +63,15 @@ document.addEventListener("DOMContentLoaded", function(e){
       for (let i= 0; i < todos.length; i++) {
          ////BUSCA DE 0 HASTA LA CANTIDAD DE ELEMENTOS QUE HAY EN TODOS LOS PRODUCTOS
         const element = todos[i];
-        if (productInfo.relatedProducts[i] === [i])
-        {console.log(todos[productInfo.relatedProducts[i]].name)}
+        if ((productInfo.relatedProducts[i]) === [i])
+        {console.log(todos[productInfo.relatedProducts[i]].name);
+        console.log("1")}
+        if ((productInfo.relatedProducts[i]) == [i])
+        {console.log(todos[productInfo.relatedProducts[i]].name);
+        console.log("2")}
+        if ((productInfo.relatedProducts[i]) = [i])
+        {console.log(todos[productInfo.relatedProducts[i]].name);
+        console.log("3")}
         ////ENTRA A LA LISTA DE TODOS LOS AUTOS 
       }
       
