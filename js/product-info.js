@@ -57,7 +57,18 @@ document.addEventListener("DOMContentLoaded", function(e){
 
       for (let i = 0; i < productInfo.relatedProducts.length; i++) {
         const element = productInfo.relatedProducts[i];
-      console.log(productInfo.relatedProducts[i]);
+        document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
+        <img src=${relate[productInfo.relatedProducts[i]].imgSrc} class="card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title">${relate[productInfo.relatedProducts[i]].name}</h5>
+          <p class="card-text">Descripción:${relate[productInfo.relatedProducts[i]].description}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cantidad de Vendidos: '${relate[productInfo.relatedProducts[i]].soldCount}</li>
+          <li class="list-group-item">A solo ${relate[productInfo.relatedProducts[i]].cost}${relate[productInfo.relatedProducts[i]].currency}</li>
+          <li class="list-group-item"><a href="https://agustinifd.github.io/Repositorio/product-info.html">Conocelo aqui!</a></li>
+        </ul>
+        </div>`;
       }
     });
     fetch(PRODUCT_INFO_COMMENTS_URL)
