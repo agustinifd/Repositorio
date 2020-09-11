@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     .then(function(response)
     {return response.json();
     })
-    .then(function(relates)
+    .then(function(todos)
     {
     fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
     .then(function(response)
@@ -60,9 +60,11 @@ document.addEventListener("DOMContentLoaded", function(e){
           <span class="sr-only">Next</span>
         </a>
       </div>`;
-      for (let i= 0; i < relates.length; i++) {
-        const element = relates[i];
-        console.log(relates[productInfo.relatedProducts[i]].name)
+      for (let i= 0; i < todos.length; i++) {
+         ////BUSCA DE 0 HASTA LA CANTIDAD DE ELEMENTOS QUE HAY EN TODOS LOS PRODUCTOS
+        const element = todos[i];
+        console.log(todos[productInfo.relatedProducts[i]].name)
+        ////ENTRA A LA LISTA DE TODOS LOS AUTOS 
       }
       
       //document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
