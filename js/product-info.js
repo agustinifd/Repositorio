@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Cantidad de Vendidos: ${productInfo.soldCount}</li>
           <li class="list-group-item">A solo ${productInfo.cost}${productInfo.currency}</li>
-          <li class="list-group-item"><a href="https://agustinifd.github.io/Repositorio/category-info.html">Categoria ${productInfo.category}</a></li>
+          <li class="list-group-item"><a class="link" href="https://agustinifd.github.io/Repositorio/category-info.html">Categoria ${productInfo.category}</a></li>
           </ul>
       </div>
       <br>
