@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function(e){
   })
   .then(function(relate)
   {
-    console.log(relate);
+    
     relates = relate;
-    console.log(relates)
+    
   })
   fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
     .then(function(response)
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     })
     .then(function(productInfo)
     {
-      console.log(relates)
+     
         document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
         <img src=${productInfo.images[0]} class="card-img-top" >
         <div class="card-body">
@@ -68,17 +68,17 @@ document.addEventListener("DOMContentLoaded", function(e){
 
       for (let i = 0; i < productInfo.relatedProducts.length; i++) {
         const element = productInfo.relatedProducts[i];
-        console.log(relate);
-        console.log(relate[i]);
+        console.log(relates);
+        console.log(relates[i]);
         document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
-        <img src=${relate[productInfo.relatedProducts[i]].imgSrc} class="card-img-top" >
+        <img src=${relates[productInfo.relatedProducts[i]].imgSrc} class="card-img-top" >
         <div class="card-body">
-          <h5 class="card-title">${relate[productInfo.relatedProducts[i]].name}</h5>
-          <p class="card-text">Descripción:${relate[productInfo.relatedProducts[i]].description}</p>
+          <h5 class="card-title">${relates[productInfo.relatedProducts[i]].name}</h5>
+          <p class="card-text">Descripción:${relates[productInfo.relatedProducts[i]].description}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cantidad de Vendidos: '${relate[productInfo.relatedProducts[i]].soldCount}</li>
-          <li class="list-group-item">A solo ${relate[productInfo.relatedProducts[i]].cost}${relate[productInfo.relatedProducts[i]].currency}</li>
+          <li class="list-group-item">Cantidad de Vendidos: '${relates[productInfo.relatedProducts[i]].soldCount}</li>
+          <li class="list-group-item">A solo ${relates[productInfo.relatedProducts[i]].cost}${relates[productInfo.relatedProducts[i]].currency}</li>
           <li class="list-group-item"><a href="https://agustinifd.github.io/Repositorio/product-info.html">Conocelo aqui!</a></li>
         </ul>
         </div>`;
