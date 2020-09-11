@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     .then(function(productInfo)
     {
      
-        document.getElementById("divcont").innerHTML = `<div class="card" style="width: 40rem;">
+        document.getElementById("divcont").innerHTML += `<div class="card" style="width: 40rem;">
         <img src=${productInfo.images[0]} class="card-img-top" >
         <div class="card-body">
           <h5 class="card-title">${productInfo.name}</h5>
