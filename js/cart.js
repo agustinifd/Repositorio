@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             <ul class="list-group list-group-flush">
               <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                 Temporary amount
-                <span>${(articulo.articles[0].cost)*(articulo.articles[0].count)}</span>
+                <span>${Number(articulo.articles[0].cost)*Number(articulo.articles[0].count)}</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                 Shipping
