@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       .then(function(articulo) {
         articulos = articulo;
     });
+    console.log(articulos);
   //  mostrarCart()
     });
 
@@ -26,4 +27,3 @@ document.addEventListener("DOMContentLoaded", function(e){
 //      </div>
 //    </li>`;
 //}
-console.log(articulos);
