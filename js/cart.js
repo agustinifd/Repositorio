@@ -11,19 +11,18 @@ document.addEventListener("DOMContentLoaded", function(e){
       .then(function(articulo) {
         articulos = articulo;
     });
-    console.log(articulos);
+    document.querySelector("#MostrarCart").innerHTML = `<ul class="list-unstyled">
+    <li class="media">
+      <img src=${articulos.articles[0].src} class="mr-3" alt="...">
+      <div class="media-body">
+         <h5 class="mt-0 mb-1">${articulos.articles[0].name}</h5>
+         Cantidad: ${articulos.articles[0].count} costo unitario ${articulos.articles[0].unitCost}${articulos.articles[0].currency}
+        <br> Costo total: ${(articulos.articles[0].count)*(articulos.articles[0].unitCost)}${articulos.articles[0].currency}
+       </div>
+     </li>`;
   //  mostrarCart()
     });
 
-//function mostrarCart()
-//{
-//    document.querySelector("#MostrarCart").innerHTML = `<ul class="list-unstyled">
-//    <li class="media">
-//      <img src=${articulos.articles[0].src} class="mr-3" alt="...">
-//      <div class="media-body">
-//        <h5 class="mt-0 mb-1">${articulos.articles[0].name}</h5>
-//        Cantidad: ${articulos.articles[0].count} costo unitario ${articulos.articles[0].unitCost}${articulos.articles[0].currency}
-//        <br> Costo total: ${(articulos.articles[0].count)*(articulos.articles[0].unitCost)}${articulos.articles[0].currency}
-//      </div>
-//    </li>`;
-//}
+
+
+
