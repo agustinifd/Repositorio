@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         <div class="card mb-3">
           <div class="card-body">
   
-            <h5 class="mb-4">We accept</h5>
+            <h5 class="mb-4">Aceptamos</h5>
   
             <img class="mr-2" width="45px"
               src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
