@@ -2,6 +2,18 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 let articulos = [];
+
+document.addEventListener("DOMContentLoaded", function(e){
+    fetch("https://japdevdep.github.io/ecommerce-api/cart/987.json")
+    .then(function(response) {
+        return response.json();
+    })
+      .then(function(articulo) {
+        articulos = articulo;
+    });
+    mostrarCart()
+    });
+
 function mostrarCart()
 {
     document.querySelector("#MostrarCart").innerHTML = `<ul class="list-unstyled">
@@ -14,14 +26,4 @@ function mostrarCart()
       </div>
     </li>`;
 }
-console.log(articulos)
-document.addEventListener("DOMContentLoaded", function(e){
-fetch("https://japdevdep.github.io/ecommerce-api/cart/987.json")
-.then(function(response) {
-    return response.json();
-})
-  .then(function(articulo) {
-    articulos = articulo;
-});
-mostrarCart()
-});
+console.log(articulos.articles[0].name);
