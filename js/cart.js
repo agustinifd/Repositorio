@@ -10,7 +10,9 @@ fetch("https://japdevdep.github.io/ecommerce-api/cart/987.json")
   })
   .then(function(articulo) {
     articulos = articulo;
-    console.log(articulos)
+    console.log(articulos.articles)
+    console.log(articulos.articles[0].name)
+    console.log(articulos.articles.name)
   });
 });
 
