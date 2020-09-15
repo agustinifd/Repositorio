@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             </ul>
               <button type="button" class="btn btn-primary btn-block waves-effect waves-light">go to checkout</button>
             </div>
-        </div></section>`;
+        </div>`;
         
     });        
     });
