@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       <img src=${articulo.articles[0].src} class="mr-3" alt="...">
       <div class="media-body">
          <h5 class="mt-0 mb-1">${articulo.articles[0].name}</h5>
-         Cantidad: ${articulo.articles[0].count} costo unitario ${articulo.articles[0].unitCost}${articulo.articles[0].currency}
+         Cantidad: ${articulo.articles[0].count} <br> Costo unitario: ${articulo.articles[0].unitCost}${articulo.articles[0].currency}
         <br> Costo total: ${(articulo.articles[0].count)*(articulo.articles[0].unitCost)}${articulo.articles[0].currency}
        </div>
      </li>`;
