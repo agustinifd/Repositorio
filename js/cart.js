@@ -91,9 +91,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             <img class="mr-2" width="45px"
               src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
               alt="Mastercard">
-            <img class="mr-2" width="45px"
-              src="https://z9t4u9f6.stackpathcdn.com/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png"
-              alt="PayPal acceptance mark">
           </div>
         </div>
         <!-- Card -->
