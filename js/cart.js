@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                     <p class="mb-0">(incluido envio)</p>
                   </strong>
                 </div>
-                <span><strong>${(articulo.articles[0].cost)*(articulo.articles[0].count)}</strong></span>
+                <span><strong></strong></span>
               </li>
             </ul>
               <button type="button" class="btn btn-primary btn-block waves-effect waves-light">go to checkout</button>
