@@ -1,23 +1,43 @@
-/////// LOGIN CHECK ////////
+//Función que se ejecuta una vez que se haya lanzado el evento de
+//que el documento se encuentra cargado, es decir, se encuentran todos los
+//elementos HTML presentes.
+document.addEventListener("DOMContentLoaded", function(e){
 
-const sinlogear = document.querySelectorAll(".sinlogear")
-const logeado = document.querySelectorAll(".logeado")
+});
 
+// VALIDACION DE ACCESO SIN GOOGLE
+btnASG.addEventListener("click",validacionSG);
+function validacionSG()
+{
+    let fuser = document.querySelector("#username").value;
+    let fpass = document.querySelector("#password").value;
+    loginlleno = false;
+    if (fuser.trim().length > 0 && fpass.trim().length > 0)
+    {
+        username = fuser.trim();
+        password = fpass.trim();
+        loginlleno = true;
+    }
+    if(!loginlleno)
+    {
+    alert(`Ingrese datos validos en ambos campos porfavor`);
+    }
+    else
+    {   auth
+        .signInWithEmailAndPassword(fuser, fpass)
+        .then(userCredential => {
+        sessionStorage.setItem("nombre", fuser)
+        window.location.href = "https://google.com";
+        })
+        .catch(function(error) {
+            alert("ATENCION EMAIL O PASSWORD NO VALIDOS");
+            });
+    }
 
-
-let loginCheck = user => {
-    if (user) {
-logeado.forEach(link => link.style.display = "block");
-sinlogear.forEach(link => link.style.display = "none");
-console.log("logeado");
-
-} else {
-    logeado.forEach(link => link.style.display = "none");
-    sinlogear.forEach(link => link.style.display = "block");
-    console.log("Nologeado");
-    sessionStorage.clear();
 }
-}
+
+
+
 //// REGISTRO USUARIO /////
 
 const Registroform = document.querySelector("#Registro-form");
@@ -35,63 +55,4 @@ Registroform.addEventListener("submit", (e) => {
     {alert("E-MAIL NO VALIDO O CLAVE MENOR A 6 CARACTERES")})
 })
 
-///// ACCESO USUARIO /////
-
-const Accesoform = document.querySelector("#Acceso-form");
-Accesoform.addEventListener("submit", e => {
-    e.preventDefault();  
-    const Accesopassword = document.querySelector("#Acceso-password").value;
-    const Accesoemail = document.querySelector("#Acceso-email").value;
     
-    auth
-    .signInWithEmailAndPassword(Accesoemail, Accesopassword)
-    .then(userCredential => {
-    sessionStorage.setItem("nombre", Accesoemail)
-    Accesoform.reset();
-    $('#AccesoModal').modal('hide');
-    window.location.href = "https://agustinifd.github.io/Repositorio/home.html";
-    })
-    .catch(function(error) {
-        alert("ATENCION EMAIL O PASSWORD NO VALIDOS");
-        });
-    
-})
-
-//////////SALIR/////////////////
-const Salir = document.querySelector("#Salir");
-Salir.addEventListener("click", e => {
-    e.preventDefault();  
-    auth.signOut().then(() => {
-        alert("Has salido con exito");
-        sessionStorage.clear();
-        window.location.href = "https://agustinifd.github.io/Repositorio/index.html";
-        })
-})
-
-////////  ESTADO DE AUTH //////
-auth.onAuthStateChanged(user =>
-    {
-        if (user)
-        {
-            loginCheck(user)
-            
-        }
-        else {
-            loginCheck(user)
-            
-            }
-        })
-    
-
-///////// GOOGLE LOGIN ///////
-const goglebtn = document.querySelector("#gogle");
-goglebtn.addEventListener("click", e => {
-var provider = new firebase.auth.GoogleAuthProvider();
-firebase.auth().signInWithPopup(provider)
-    .then(result => {
-        Accesoform.reset();
-        $('#AccesoModal').modal('hide');
-        sessionStorage.setItem("nombre", firebase.auth().currentUser.email)
-        window.location.href = "https://agustinifd.github.io/Repositorio/home.html";
-    })
-})
