@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                   <div class="d-flex justify-content-between">
                     <div>
                       <h5>${articulo.articles[0].name}</h5>
-                      <p class="mb-3 text-muted text-uppercase small">Delicioso olor a monte nativo de pinos</p>
+                      <p class="mb-8 text-muted text-uppercase small">Delicioso olor a monte nativo de pinos</p>
                     </div>
                     <div>
                       <div class="def-number-input number-input safari_only mb-0 w-100">
