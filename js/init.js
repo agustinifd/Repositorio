@@ -16,8 +16,6 @@
   const auth = firebase.auth();
   const fs = firebase.firestore();
 
-
-
 const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
@@ -61,8 +59,26 @@ var getJSONData = function(url){
     });
 }
 
+////// NOMBRE DE USUARIO //////
+var remplazo = document.getElementById("profile");
+function remplazito(){
+  if (sessionStorage.length > 0){
+  remplazo.innerText = sessionStorage.getItem("nombre");}
+  else{ remplazo.innerText = "Anonimo";}
+};
+
+////// SALIR /////////
+document.querySelector("#salir").addEventListener("click",salir)
+function salir()
+{
+  console.log("estoestapasando");
+  sessionStorage.clear();
+  window.location.href = "index.html";
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+remplazito();
 });

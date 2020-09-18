@@ -27,7 +27,7 @@ function validacionSG()
         .signInWithEmailAndPassword(fuser, fpass)
         .then(userCredential => {
         sessionStorage.setItem("nombre", fuser)
-        window.location.href = "https://google.com";
+        window.location.href = "home.html";
         })
         .catch(function(error) {
             alert("ATENCION EMAIL O PASSWORD NO VALIDOS");
@@ -55,4 +55,22 @@ Registroform.addEventListener("submit", (e) => {
     {alert("E-MAIL NO VALIDO O CLAVE MENOR A 6 CARACTERES")})
 })
 
-    
+/// ACCESO ANONIMO ///
+btnAno.addEventListener("click",ano); 
+function ano()
+{
+    window.location.href = "home.html";
+}
+
+///////// GOOGLE LOGIN ///////
+
+goglebtn.addEventListener("click", e => {
+var provider = new firebase.auth.GoogleAuthProvider();
+firebase.auth().signInWithPopup(provider)
+    .then(result => {
+        Accesoform.reset();
+        $('#AccesoModal').modal('hide');
+        sessionStorage.setItem("nombre", firebase.auth().currentUser.email)
+        window.location.href = "https://agustinifd.github.io/Repositorio/home.html";
+    })
+})
