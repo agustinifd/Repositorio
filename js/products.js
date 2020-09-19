@@ -16,11 +16,9 @@ function Mostrar()
     htmlContentToAppend += 
         `
 
-         <a href="product-info.html"><div id="autonumero${i}" style="border: 1px solid black;
+         <a class="speciala" href="product-info.html"><div id="autonumero${i}" style="border: 1px solid black;
          margin: 30px;" class="col-lg-12 mx-auto">
-
          <div id="autonumero${i}" class="col-lg-12 mx-auto">
-
         <!-- List group-->
         <!-- Custom content-->
         <div class="media align-items-lg-center flex-column flex-lg-row p-12">
