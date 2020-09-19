@@ -15,8 +15,12 @@ function Mostrar()
     
     htmlContentToAppend += 
         `
+
          <a href="product-info.html"><div id="autonumero${i}" style="border: 1px solid black;
          margin: 30px;" class="col-lg-12 mx-auto">
+
+         <div id="autonumero${i}" class="col-lg-12 mx-auto">
+
         <!-- List group-->
         <!-- Custom content-->
         <div class="media align-items-lg-center flex-column flex-lg-row p-12">
@@ -25,9 +29,10 @@ function Mostrar()
         <p class="font-italic text-muted mb-0 small">${arraydeproductos[i].description}</p>
         <div class="d-flex align-items-center justify-content-between mt-1">
         <h6 class="font-weight-bold my-2">${arraydeproductos[i].cost}${arraydeproductos[i].currency}</h6><br>
-        <ul class="list-inline small"> Se vendieron(${arraydeproductos[i].soldCount})<br></a>`;
 
-        for (let autito = 1; autito <= arraydeproductos[i].soldCount; autito++) {
+        <ul class="list-inline small"> Se vendieron(${arraydeproductos[i].soldCount})<br>`;
+
+         for (let autito = 1; autito <= arraydeproductos[i].soldCount; autito++) {
         htmlContentToAppend += `<li class="list-inline-item m-0"><i class="fa fa-car text-success"></i></li>`.repeat(1);
         if (autito % 10 === 0) {
             htmlContentToAppend += `<br>`
@@ -41,7 +46,7 @@ function Mostrar()
         </div> 
         </li>
         </div> 
-        </div> 
+        </div></a> 
         <!-- End -->`;
     }
 
