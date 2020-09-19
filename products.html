@@ -13,64 +13,96 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <style>
-       #cat-list-container
-    {
-      list-style:none;
-    }
-      .link
-      {
-        text-decoration: none; 
-        color: black;
-      }
-      .link:active {
-text-decoration: none; 
+      .text-gray {
+    color: #aaa
 }
-.link:hover {
-text-decoration: none; 
-color: darkkhaki;
+a:hover
+{
+text-decoration: none;
 }
-.link:focus {
-text-decoration: none; 
-}
-.link:visited {
-text-decoration: none; 
+
+.mx
+{
+max-width: 50px;
 }
     </style>
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
+    <nav class="site-header py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-    
-          <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/home.html">Portada</a>
-          <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/categories.html">Categorías</a>
-          <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/products.html">Productos</a>
-          <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/sell.html">Vender</a>
-          
-         <a class="py-2 d-none d-md-inline-block btn btn-secondary dropdown-toggle" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+        <a class="py-2 d-none d-md-inline-block btn btn-secondary dropdown-toggle" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="https://agustinifd.github.io/Repositorio/cart.html">Mi carrito</a>
-          <a class="dropdown-item" href="https://agustinifd.github.io/Repositorio/index.html">Salir</a>
-          <a class="dropdown-item" href="https://agustinifd.github.io/Repositorio/my-profile.html">Mi Perfil</a>
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" id="salir" href="#">Salir</a>
+          <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
         </div>
       </div>
-    </div>
+       </nav>
+       <main>
+   
+<nav class="sticky-top">
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group" role="group" aria-label="First group">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ordenar publicaciones
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button type="button" id="btnMP" class="dropdown-item btn btn-secondary">Mayor precio</button>
+            <button type="button" id="btnmP" class="dropdown-item btn btn-secondary">Menor precio</button>
+            <button type="button" id="btnMR"class="dropdown-item btn btn-secondary">Más relevante</button>
+          </div>
+        </div>
+
+        
+
+       
+            <a id="btnBUS" onclick="BUS()" href="#">
+            <div class="input-group">
+            <div class="input-group-prepend">
+            </div></a>
+            <input type="search" id="txtBUS" class="form-control" placeholder="Escriba aqui para filtrar" aria-label="Input group example" aria-describedby="btnGroupAddon">
+             </div>
+      
+             <a id="btnBUS" onclick="BUS()" href="#">    <div class="input-group-text"><i  class="fa fa-search"></i>
+          </div></a>
+        </div>
+      </div>
+      <form>
+            <label for="range-10a">Minimo:</label>
+            <input type="text" class="mx" id="range-10a">
+            <label for="range-10b">Maximo:</label>
+            <input type="text" class="mx" id="range-10b">
+            <input type="button" id="filtromx" value="Filtrar" class="btn btn-primary">
+        </div>
+    </form>
     </nav>
-    <div class="col text-right" id="botones">
-      <input type="search" value="" placeholder="Ingrese su busqueda" id="busqueta">
-      <input type="button" value="BUSCAR" id="btnbuscar">
-      <input type="button" id="btnrel" value="Revelancia">
-      <input type="button" id="btndsc" value="Mayor precio">
-      <input type="button" id="btnasc" value="Menor precio">
-      <input type="number" placeholder="Indique el precio minimo que desea filtar" value="0" id="txtfiltromin">
-      <input type="number" placeholder="Indique el precio maximo que desea filtar" value="15000" id="txtfiltromax">
-      <input type="button" onclick="filtro()" value="Filtrar por $">
-    </div>
-    <br>
-    <div class="row">
-      <ul id="cat-list-container">
-      </ul>
-  </div>
+        <div class="container py-5">
+          <div class="row text-center mb-5">
+              <div class="col-lg-7 mx-auto">
+                  <h1>Productos</h1>
+              </div>
+          </div>
+       
+    
+          <div id="prod-list-container">
+          <div class="row"></div>
+</div>
+    </main>
+
+
+
+
+
+
+
+
 
     <footer class="text-muted bg-light">
       <div class="container">
@@ -81,8 +113,8 @@ text-decoration: none;
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
     </footer>
-    
     <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+    
     <!--- FIREBASE --->
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
@@ -91,13 +123,9 @@ text-decoration: none;
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
-
-  <!---CODIGO DE JS--->
-    <script src="https://agustinifd.github.io/Repositorio/js/jquery-3.4.1.min.js"></script>
-    <script src="https://agustinifd.github.io/Repositorio/js/bootstrap.bundle.min.js"></script>
-    <script src="https://agustinifd.github.io/Repositorio/js/init.js"></script>
-    <script src="https://agustinifd.github.io/Repositorio/js/products.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script><script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/products.js"></script>
   </body>
 </html>

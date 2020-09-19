@@ -13,125 +13,27 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-
-<style>
-.related
-{
-  display: inline-block;
-}
-.card
-{
-margin-left: 30%;
-}
-.carousel
-{
-margin-left:30%;
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-
-  padding: 10px;
-}
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}
-.related
-{
-  margin-left: 0;
-  margin-right: 0;
-  display: block-inline;
-}
-.imgrel
-{
-  width: 70%
-}
-#relacionados
-{
-  margin-left: 31%;
-}
-#Pr
-{
-  font-size: 30px;
-}
-#cat-list-container
-    {
-      list-style:none;
-      color: green;
-    }
-      .link
-      {
-        text-decoration: none; 
-        color: green;
-      }
-      .link:active {
-text-decoration: none; 
-color: green;
-}
-.link:hover {
-text-decoration: none; 
-color: green;
-}
-.link:focus {
-text-decoration: none; 
-color: green;
-}
-.link:visited {
-  color: green;
-text-decoration: none; 
-}
-.carousel-control-next
-{margin-right: 30%;}
-.carousel-control-next-icon
-{background-color: green;}
-.carousel-control-prev-icon
-{background-color: green;}
-</style>
 </head>
 
 <body>
-<nav class="site-header sticky-top py-1 bg-dark">
-  <div class="container d-flex flex-column flex-md-row justify-content-between">
-
-      <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/home.html">Portada</a>
-      <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="https://agustinifd.github.io/Repositorio/sell.html">Vender</a>
-      
-     <a class="py-2 d-none d-md-inline-block btn btn-secondary dropdown-toggle" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    </a>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="https://agustinifd.github.io/Repositorio/cart.html">Mi carrito</a>
-      <a class="dropdown-item" href="https://agustinifd.github.io/Repositorio/index.html">Salir</a>
-      <a class="dropdown-item" href="https://agustinifd.github.io/Repositorio/my-profile.html">Mi Perfil</a>
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+    </div>
+  </nav>
+  <div class="container p-5">
+    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+      <h4 class="alert-heading">¡A trabajar! :)</h4>
+      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
+      <hr>
+      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
   </div>
-</div>
-</nav>
-<div id="divcont">
-</div>  
-     <div id="Pr" style="text-align: center;">Productos relacionados:</div>
-<div id="relacionados"></div>
-<hr>
-<div id="Pr" style="text-align: center;">Comentarios y valoraciones:</div>
-<div id="comentarios" class="grid-container">
-</div>
-<div class="container">Comenta y valora el producto<br><textarea placeholder="Escribe un comentario" id="comentarionuevo" rows="4" cols="50">
- </textarea><select id="slct">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select><span class="fa fa-star checked"></span><br><input type="button" id="btncalificar" value="Calificar"></div>
-
-
-
-<footer class="text-muted">
+  <footer class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
@@ -142,9 +44,12 @@ text-decoration: none;
   </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </div>
- 
   <!--- FIREBASE --->
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
@@ -154,13 +59,10 @@ text-decoration: none;
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
-
-  <!---CODIGO DE JS--->
-  <script src="https://agustinifd.github.io/Repositorio/js/jquery-3.4.1.min.js"></script>
-  <script src="https://agustinifd.github.io/Repositorio/js/bootstrap.bundle.min.js"></script>
-  <script src="https://agustinifd.github.io/Repositorio/js/init.js"></script>
-  <script src="https://agustinifd.github.io/Repositorio/js/product-info.js"></script>
-
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
 </body>
 
 </html>
