@@ -14,7 +14,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <style>
-    body {
+
+body {
   font-family: 'open sans';
   overflow-x: hidden; }
 
@@ -59,7 +60,7 @@ img {
 .tab-content {
   overflow: hidden; }
   .tab-content img {
-    width: 100%;
+    width: 150%;
     -webkit-animation-name: opacity;
             animation-name: opacity;
     -webkit-animation-duration: .3s;
@@ -179,14 +180,11 @@ img {
 {
   display: inline-block;
 }
-.card
+.cardpr
 {
 margin-left: 30%;
 }
-.carousel
-{
-margin-left:30%;
-}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -194,7 +192,7 @@ margin-left:30%;
   padding: 10px;
 }
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #eee;
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
@@ -213,6 +211,14 @@ margin-left:30%;
 #relacionados
 {
   margin-left: 31%;
+}
+.list-group-item
+{
+  background-color: #eee;
+}
+.card-header
+{
+  background-color: #eee;
 }
 #Pr
 {
@@ -244,12 +250,8 @@ color: green;
   color: green;
 text-decoration: none; 
 }
-.carousel-control-next
-{margin-right: 30%;}
-.carousel-control-next-icon
-{background-color: green;}
-.carousel-control-prev-icon
-{background-color: green;}
+
+ 
   </style>
 </head>
 
@@ -290,10 +292,6 @@ text-decoration: none;
   </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
   </div>
   <!--- FIREBASE --->

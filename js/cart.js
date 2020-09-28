@@ -7,132 +7,75 @@ document.addEventListener("DOMContentLoaded", function(e){
         return response.json();
     })
       .then(function(articulo) {
-    document.querySelector("#MostrarCart").innerHTML = `
-    <section>
-    <!--Grid row-->
-    <div class="row">
-  
-      <!--Grid column-->
-      <div class="col-lg-8">
-  
-        <!-- Card -->
-        <div class="card wish-list mb-3">
-          <div class="card-body">
-  
-            <h5 class="mb-4">Carrito (<span>${articulo.articles.length}</span> items)</h5>
-              <div class="row mb-4">
-              <div class="col-md-5 col-lg-3 col-xl-3">
-                <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                  <img class="img-fluid w-100"
-                    src=${articulo.articles[0].src} alt="Sample">
-                  <a href="#!">
-                    <div class="mask waves-effect waves-light">
-                      <div class="mask rgba-black-slight waves-effect waves-light"></div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-7 col-lg-9 col-xl-9">
-                <div>
-                  <div class="d-flex justify-content-between">
-                    <div>
-                      <h5>${articulo.articles[0].name}</h5>
-                      <p class="mb-8 text-muted text-uppercase small">Delicioso olor a monte nativo de pinos</p>
-                    </div>
-                    <div>
-                      <div class="def-number-input number-input safari_only mb-0 w-100">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                          class="minus"></button>
-                        <input class="quantity" min="0" name="quantity" value=${articulo.articles[0].count} type="number">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                          class="plus"></button>
-                      </div>
-                      <small id="passwordHelpBlock" class="form-text text-muted text-center">
-                      </small>
-                    </div>
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                      <a href="#!" type="button" class="card-link-secondary small text-uppercase mr-3"><i
-                          class="fas fa-trash-alt mr-1"></i> Remove item </a>
-                      <a href="#!" type="button" class="card-link-secondary small text-uppercase"><i
-                          class="fas fa-heart mr-1"></i> Move to wish list </a>
-                    </div>
-                    <p class="mb-0"><span><strong>${articulo.articles[0].unitCost}${articulo.articles[0].currency}</strong></span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-        <!-- Card -->
-  
-        <!-- Card -->
-        <div class="card mb-3">
-          <div class="card-body">
-  
-            <h5 class="mb-4">Timpo estimado de envio</h5>
-  
-            <p class="mb-0"> Miercoles., 12.03. - Lunes., 16.03.</p>
-          </div>
+        for (let i = 0; i < articulo.articles.length; i++) {
+        document.querySelector("#mostrarcart").innerHTML = `<div class="row" id="articulo${i}">
+        <div class="col-12 col-sm-12 col-md-2 text-center">
+                <img class="img-responsive" src=${articulo.articles[i].src} alt="pinito">
         </div>
-        <!-- Card -->
-        <!-- Card -->
-        <div class="card mb-3">
-          <div class="card-body">
-  
-            <h5 class="mb-4">Aceptamos</h5>
-  
-            <img class="mr-2" width="45px"
-              src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-              alt="Visa">
-            <img class="mr-2" width="45px"
-              src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-              alt="American Express">
-            <img class="mr-2" width="45px"
-              src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-              alt="Mastercard">
-          </div>
+        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+            <h4 class="product-name"><strong>${articulo.articles[i].name}</strong></h4>
+            <h4>
+                <small>${articulo.articles[i].name}</small>
+            </h4>
         </div>
-        <!-- Card -->
-  
-      </div>
-      <!--Grid column-->
-  
-      <!--Grid column-->
-      <div class="col-lg-4">
-  
-        <!-- Card -->
-        <div class="card mb-3">
-          <div class="card-body">
-  
-            <h5 class="mb-3">Costo total</h5>
-  
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                Temporary amount
-                <span>${Number(articulo.articles[0].unitCost)*Number(articulo.articles[0].count)}</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                Shipping
-                <span>Gratis</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                <div>
-                  <strong>The total amount of</strong>
-                  <strong>
-                    <p class="mb-0">(incluido envio)</p>
-                  </strong>
-                </div>
-                <span><strong>${Number(articulo.articles[0].unitCost)*Number(articulo.articles[0].count)}${articulo.articles[0].currency}</strong></span>
-              </li>
-            </ul>
-              <button type="button" class="btn btn-primary btn-block waves-effect waves-light">go to checkout</button>
+        <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+            <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                <h6><strong><b id="precioarticulo${i}">${articulo.articles[i].unitCost}</b> ${articulo.articles[i].currency} <span class="text-muted">x</span></strong></h6>
             </div>
-        </div>`;
-        
-    });        
+            <div class="col-4 col-sm-4 col-md-4">
+                <div class="quantity">
+                    <input type="button" value="+" class="plus">
+                    <input type="number" id="cantarticulo${i}" step="1" max="99" min="1" value="${articulo.articles[i].count}" title="Qty" class="qty"
+                           size="4">
+                    <input type="button" value="-" class="minus">
+                </div>
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 text-right">
+                <button onclick="borrar(${i})" type="button" class="btn btn-outline-danger btn-xs">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <hr>`;  
+      }
+ totalfn();
+      });        
     });
 
+
+
+    // FUNCTION PARA PONER EL TOTAL
+    document.querySelector("#actualizar").addEventListener("click",totalfn);
+    function totalfn()
+    {
+
+      // LA VARIABLE X EMPIEZA COMO INFINITO POSITIVO PARA ASI DESPUES COMPARARLA CON LA CANTIDAD DE ARTICULOS Y ASI REEMPLAZARLA PODER USARLA COMO CONTADOR PARA SABER CUANTOS PRODUCTOS HAY EN EL CARRO
+      total = 0;
+      let x = Number.POSITIVE_INFINITY
+      for (let i = 0; i < x; i++) 
+      {
+        if (document.querySelector(`#cantarticulo${i}`) === null)
+        {x = i;}
+        if (i<x)
+        {
+        total = total + (Number(document.querySelector(`#cantarticulo${i}`).value) * Number(document.querySelector(`#precioarticulo${i}`).textContent));
+        }
+      document.querySelector("#total").innerHTML = total;
+      
+      {
+
+      }
+      }
+    }
+
+    /// FUNCION PARA BORRAR, RECIBE UN PARAMETRO CUANDO ES LLAMADA, EL PARAMETRO VIENE POR ONCLICK DESDE EL BOTON BASURA DEFINIDO EN EL FOR DONDE SE CARGA LA LISTA DE PRODUCTOS PORQUE ASI EL MISMO i QUE SE ASIGNA A TODO EL CONTENEDOR DEL PRODUCTO ES EL MISMO QUE SE ENVIA POR MEDIO DEL ONCLIK A LA FUNCION BORRAR PARA ASI ELIMINAR ESE CONTENEDOR
+
+function borrar(num)
+{
+  document.querySelector(`#articulo${num}`).innerHTML = "";
+}
 
 
 
