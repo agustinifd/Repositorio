@@ -39,17 +39,14 @@ document.addEventListener("DOMContentLoaded", function(e){
             </div>
         </div>
     </div>
-    <hr>`;  
+    <hr>`;
+    document.querySelector(`#cantarticulo${i}`).addEventListener("change",totalfn);
+    document.querySelector(`#precioarticulo${i}`).addEventListener("change",totalfn);  
     }
- totalfn(Number(articulo.articles.length) + 1);
- console.log((Number(articulo.articles.length) + 1))
- /// ACTIVACION DE LA FUNCION PARA PONER EL TOTAL EN TIEMPO REAL ///
-
-      });        
+    totalfn();
+    });        
     });
 
-    
-    
 
     // FUNCTION PARA PONER EL TOTAL
     document.querySelector("#actualizar").addEventListener("click",totalfn);
