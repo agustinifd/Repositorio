@@ -40,8 +40,9 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>
     </div>
     <hr>`;
-    document.querySelector(`#cantarticulo${i}`).addEventListener("change",totalfn);
-    document.querySelector(`#precioarticulo${i}`).addEventListener("change",totalfn);  
+document.querySelector(`#cantarticulo${i}`).addEventListener('change', (event) => {
+totalfn();
+    });
     }
     totalfn();
     });        
