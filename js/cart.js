@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       .then(function(articulo) {
 
         for (let i = 0; i < articulo.articles.length; i++) {
-        document.querySelector("#mostrarcart").innerHTML = `<div class="row" id="articulo${i}">
+        document.querySelector("#mostrarcart").innerHTML += `<div class="row" id="articulo${i}">
         <div class="col-12 col-sm-12 col-md-2 text-center">
                 <img class="img-responsive" src=${articulo.articles[i].src} alt="pinito">
         </div>
