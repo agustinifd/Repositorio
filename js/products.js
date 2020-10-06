@@ -1,7 +1,4 @@
 /////////// LOS DISEÑOS UTLIZADOS FUERON EXTRAIDOS DE https://bbbootstrap.com/snippets/product-list-65909871 Y SE LE REALIZARON UNA MINIMA ADAPTACION/////
-
-
-
 var arraydeproductos = [];
 
 function Mostrar()
@@ -58,7 +55,15 @@ function MP()
 {
     
     htmlContentToAppend = "";
-    arrayMP = arraydeproductos.sort(function(a, b){return Number(a.cost) < Number(b.cost)}) 
+    arraydeproductos.sort(function (a, b) {
+        if (Number(a.cost) < Number(b.cost)) {
+          return 1;
+        }
+        if (Number(a.cost) > Number(b.cost)) {
+          return -1;
+        }
+        return 0;
+      });
     Mostrar();
 }
 
@@ -69,7 +74,13 @@ function mP()
 {
     
     htmlContentToAppend = "";
-    arraydeproductos = arraydeproductos.sort(function(a, b){return Number(a.cost) > Number(b.cost)}) 
+    arraydeproductos.sort(function (a, b)
+    {if (Number(a.cost) > Number(b.cost))
+    {return 1;}
+    if (Number(a.cost) < Number(b.cost))
+    {return -1;}
+    return 0;
+    }); 
     Mostrar(); 
 }
 
@@ -77,7 +88,14 @@ function mP()
 function MR()
 {
     htmlContentToAppend = "";
-    arraydeproductos = arraydeproductos.sort(function(a, b){return Number(a.soldCount) < Number(b.soldCount)}) 
+    arraydeproductos.sort(function(a, b)
+    {
+        if (Number(a.soldCount) < Number(b.soldCount))
+        {return 1;}
+        if (Number(a.soldCount) > Number(b.soldCount))
+        {return -1;}
+        return 0;
+    }); 
     Mostrar(); 
 }
 
@@ -98,8 +116,7 @@ if(document.querySelector(`#autonumero${i}`).textContent.toLowerCase().indexOf(f
 }   
 else
 {
- document.querySelector(`#autonumero${i}`).style.display = 'none';
- 
+document.querySelector(`#autonumero${i}`).style.display = 'none';
 }
 }
 }
