@@ -26,10 +26,10 @@ document.addEventListener("DOMContentLoaded", function(e){
             </div>
             <div class="col-4 col-sm-4 col-md-4">
                 <div class="quantity">
-                    <input type="button" value="+" class="plus">
+                    
                     <input type="number" id="cantarticulo${i}" step="1" max="99" min="1" value="${articulo.articles[i].count}" title="Qty" class="qty"
                            size="4">
-                    <input type="button" value="-" class="minus">
+                    
                 </div>
             </div>
             <div class="col-2 col-sm-2 col-md-2 text-right">
