@@ -57,8 +57,9 @@ document.querySelector(`#cantarticulo${i}`).addEventListener('keypress',totalfn)
       let x = Number.POSITIVE_INFINITY
       for (let i = 0; i < x; i++) 
       {
-        if (document.querySelector(`#cantarticulo${i}`) === null || isNaN(document.querySelector(`#cantarticulo${i}`)) || document.querySelector(`#precioarticulo${i}`) === null || isNaN(document.querySelector(`#precioarticulo${i}`)) || isNaN(total))
-        {x = i;}
+        if (document.querySelector(`#cantarticulo${i}`) === null || !isNaN(document.querySelector(`#cantarticulo${i}`)) || document.querySelector(`#precioarticulo${i}`) === null || !isNaN(document.querySelector(`#precioarticulo${i}`)) || isNaN(total))
+        {x = i;
+        total = `Se produjo un error ingrese numeros`}
         if (i<x)
         {
         total = total + (Number(document.querySelector(`#cantarticulo${i}`).value) * Number(document.querySelector(`#precioarticulo${i}`).textContent));
