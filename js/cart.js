@@ -40,9 +40,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>
     </div>
     <hr>`;
-document.querySelector(`#cantarticulo${i}`).addEventListener('change', (event) => {
-totalfn();
-    });
+document.querySelector(`#cantarticulo${i}`).addEventListener('keypress',totalfn);
     }
     totalfn();
     });        
