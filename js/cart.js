@@ -1,4 +1,4 @@
-
+let numerototaldeproductos = 0;
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>
         <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
             <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                <h6><strong><b id="precioarticulo${i}">${Number(articulo.articles[i].unitCost)}</b> ${articulo.articles[i].currency} <span class="text-muted">x</span></strong></h6>
+                <h6><strong><b id="precioarticulo${i}">${(articulo.articles[i].unitCost)}</b> ${articulo.articles[i].currency} <span class="text-muted">x</span></strong></h6>
             </div>
             <div class="col-4 col-sm-4 col-md-4">
                 <div class="quantity">
                     
-                    <input type="number" id="cantarticulo${i}" step="1" max="99" min="1" value="${Number(articulo.articles[i].count)}" title="Qty" class="qty"
+                    <input type="number" id="cantarticulo${i}" step="1" max="99" min="1" value="${(articulo.articles[i].count)}" title="Qty" class="qty"
                            size="4">
                     
                 </div>
@@ -40,9 +40,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>
     </div>
     <hr>`;
-document.querySelector(`#cantarticulo${i}`).addEventListener('keypress',totalfn);
+    numerototaldeproductos = Number(articulo.articles.length);
     }
     totalfn();
+    bloqueActualizacion();
     });        
     });
 
@@ -51,25 +52,24 @@ document.querySelector(`#cantarticulo${i}`).addEventListener('keypress',totalfn)
     document.querySelector("#actualizar").addEventListener("click",totalfn);
     function totalfn()
     {
-
-      // LA VARIABLE X EMPIEZA COMO INFINITO POSITIVO PARA ASI DESPUES COMPARARLA CON LA CANTIDAD DE ARTICULOS Y ASI REEMPLAZARLA PODER USARLA COMO CONTADOR PARA SABER CUANTOS PRODUCTOS HAY EN EL CARRO
-      total = 0;
-      let x = Number.POSITIVE_INFINITY
-      for (let i = 0; i < x; i++) 
-      {
-        if (document.querySelector(`#cantarticulo${i}`) === null || !isNaN(document.querySelector(`#cantarticulo${i}`).value) || document.querySelector(`#precioarticulo${i}`) === null || !isNaN(document.querySelector(`#precioarticulo${i}`).value) || !isNaN(total))
-        {x = i;
-        total = `Se produjo un error ingrese numeros`}
-        if (i<x)
-        {
-        total = total + (Number(document.querySelector(`#cantarticulo${i}`).value) * Number(document.querySelector(`#precioarticulo${i}`).textContent));
-        }
-      document.querySelector("#total").innerHTML = total;
-      
-      {
-
-      }
-      }
+    total = 0;
+    for (let i = 0; i <= numerototaldeproductos; i++) 
+    {
+    if(document.querySelector(`#cantarticulo${i}`) !== null)
+    {
+    if(Number(document.querySelector(`#cantarticulo${i}`).value) > 0 )
+    {
+    total = total + (Number(document.querySelector(`#cantarticulo${i}`).value)) * (Number(document.querySelector(`#precioarticulo${i}`).textContent));
+    }
+    else 
+    {
+    total = "Ingrese numeros en los campos de cantidad porfavor"; 
+    borrar(i);
+    i = numerototaldeproductos + 5;      
+    }
+    }
+    }    
+    document.querySelector("#total").innerHTML = total;   
     }
 
     /// FUNCION PARA BORRAR, RECIBE UN PARAMETRO CUANDO ES LLAMADA, EL PARAMETRO VIENE POR ONCLICK DESDE EL BOTON BASURA DEFINIDO EN EL FOR DONDE SE CARGA LA LISTA DE PRODUCTOS PORQUE ASI EL MISMO i QUE SE ASIGNA A TODO EL CONTENEDOR DEL PRODUCTO ES EL MISMO QUE SE ENVIA POR MEDIO DEL ONCLIK A LA FUNCION BORRAR PARA ASI ELIMINAR ESE CONTENEDOR
@@ -79,5 +79,11 @@ function borrar(num)
   document.querySelector(`#articulo${num}`).innerHTML = "";
 }
 
-
+function bloqueActualizacion()
+{
+    for (let i = 0; i < numerototaldeproductos; i++) 
+    {
+    document.querySelector(`#cantarticulo${i}`).addEventListener('change',totalfn); 
+    }
+}
 
