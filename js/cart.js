@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>
         <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
             <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                <h6><strong><b id="precioarticulo${i}">${(articulo.articles[i].unitCost)}</b> ${articulo.articles[i].currency} <span class="text-muted">x</span></strong></h6>
+                <h6><strong><b id="precioarticulo${i}">${(articulo.articles[i].unitCost)}</b> <b id="moneda${i}">${articulo.articles[i].currency} <b><span class="text-muted">x</span></strong></h6>
             </div>
             <div class="col-4 col-sm-4 col-md-4">
                 <div class="quantity">
@@ -59,8 +59,16 @@ document.addEventListener("DOMContentLoaded", function(e){
     {
     if(Number(document.querySelector(`#cantarticulo${i}`).value) > 0 )
     {
+        if(document.querySelector(`#moneda${i}`).textContent == "USD x")
+        {
+    total = total + (Number(document.querySelector(`#cantarticulo${i}`).value)) * ((Number(document.querySelector(`#precioarticulo${i}`).textContent)*40));
+        }
+        if(document.querySelector(`#moneda${i}`).textContent == "UYU x")
+        {
     total = total + (Number(document.querySelector(`#cantarticulo${i}`).value)) * (Number(document.querySelector(`#precioarticulo${i}`).textContent));
+        }
     }
+
     else 
     {
     total = "Ingrese numeros en los campos de cantidad porfavor"; 
@@ -69,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     }
     }
     }    
-    document.querySelector("#total").innerHTML = total;   
+    document.querySelector("#total").innerHTML = `${total} UYU`;   
     }
 
     /// FUNCION PARA BORRAR, RECIBE UN PARAMETRO CUANDO ES LLAMADA, EL PARAMETRO VIENE POR ONCLICK DESDE EL BOTON BASURA DEFINIDO EN EL FOR DONDE SE CARGA LA LISTA DE PRODUCTOS PORQUE ASI EL MISMO i QUE SE ASIGNA A TODO EL CONTENEDOR DEL PRODUCTO ES EL MISMO QUE SE ENVIA POR MEDIO DEL ONCLIK A LA FUNCION BORRAR PARA ASI ELIMINAR ESE CONTENEDOR
