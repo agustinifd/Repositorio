@@ -1,3 +1,4 @@
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -39,12 +40,16 @@ document.addEventListener("DOMContentLoaded", function(e){
         </div>
     </div>
     <hr>`;  
-      }
- totalfn();
+    }
+ totalfn(Number(articulo.articles.length) + 1);
+ console.log((Number(articulo.articles.length) + 1))
+ /// ACTIVACION DE LA FUNCION PARA PONER EL TOTAL EN TIEMPO REAL ///
+
       });        
     });
 
-
+    
+    
 
     // FUNCTION PARA PONER EL TOTAL
     document.querySelector("#actualizar").addEventListener("click",totalfn);
