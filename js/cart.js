@@ -48,11 +48,13 @@ document.addEventListener("DOMContentLoaded", function(e){
     });
 
 
-    // FUNCTION PARA PONER EL TOTAL
+    // FUNCTION PARA PONER EL TOTAL Y SUB TOTAL
     document.querySelector("#actualizar").addEventListener("click",totalfn);
     function totalfn()
     {
-    total = 0;
+    let total = 0;
+    let subtotal = 0;
+    let costoEnvio = 0;
     for (let i = 0; i <= numerototaldeproductos; i++) 
     {
     if(document.querySelector(`#cantarticulo${i}`) !== null)
@@ -61,12 +63,20 @@ document.addEventListener("DOMContentLoaded", function(e){
     {
         if(document.querySelector(`#moneda${i}`).textContent == "USD x")
         {
-    total = total + (Number(document.querySelector(`#cantarticulo${i}`).value)) * ((Number(document.querySelector(`#precioarticulo${i}`).textContent)*40));
+    subtotal = subtotal + (Number(document.querySelector(`#cantarticulo${i}`).value)) * ((Number(document.querySelector(`#precioarticulo${i}`).textContent)*40));
         }
         if(document.querySelector(`#moneda${i}`).textContent == "UYU x")
         {
-    total = total + (Number(document.querySelector(`#cantarticulo${i}`).value)) * (Number(document.querySelector(`#precioarticulo${i}`).textContent));
+    subtotal = subtotal + (Number(document.querySelector(`#cantarticulo${i}`).value)) * (Number(document.querySelector(`#precioarticulo${i}`).textContent));
         }
+    if (document.querySelector("#metodoenvio").value === "Premium (2-5 días) - Costo del 15% sobre el subtotal.")
+    {costoEnvio = (15*subtotal)/100}
+    if(document.querySelector("#metodoenvio").value === "Standard (12 a 15 días) - Costo del 5% sobre el subtotal.")
+    {costoEnvio = (5*subtotal)/100}
+      if (document.querySelector("#metodoenvio").value === "Express (5-8 días) - Costo del 7% sobre el subtotal.")
+    {costoEnvio = (7*subtotal)/100}
+    total = subtotal + costoEnvio;
+
     }
 
     else 
@@ -76,8 +86,12 @@ document.addEventListener("DOMContentLoaded", function(e){
     i = numerototaldeproductos + 5;      
     }
     }
+    }
+    if(document.querySelector("#metodoenvio").value !== "Seleccione el tipo de envio")
+    {
+        document.querySelector("#total").innerHTML = `${total} UYU`;    
     }    
-    document.querySelector("#subtotal").innerHTML = `${total} UYU`;   
+    document.querySelector("#subtotal").innerHTML = `${subtotal} UYU`;   
     }
 
     /// FUNCION PARA BORRAR, RECIBE UN PARAMETRO CUANDO ES LLAMADA, EL PARAMETRO VIENE POR ONCLICK DESDE EL BOTON BASURA DEFINIDO EN EL FOR DONDE SE CARGA LA LISTA DE PRODUCTOS PORQUE ASI EL MISMO i QUE SE ASIGNA A TODO EL CONTENEDOR DEL PRODUCTO ES EL MISMO QUE SE ENVIA POR MEDIO DEL ONCLIK A LA FUNCION BORRAR PARA ASI ELIMINAR ESE CONTENEDOR
@@ -93,5 +107,6 @@ function bloqueActualizacion()
     {
     document.querySelector(`#cantarticulo${i}`).addEventListener('change',totalfn); 
     }
+    document.querySelector(`#metodoenvio`).addEventListener('change',totalfn);
 }
 

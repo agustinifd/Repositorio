@@ -130,7 +130,12 @@ form
              <div class="card-header bg-dark text-light">
                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                  Carrito
-                 <a href="products.html" class="btn btn-outline-info btn-sm pull-right">Seguir comprando</a>
+                 <select style="width: 20%;" class="form-control btn btn-outline-info btn-sm pull-right" id="tipodemoneda">
+                  <option>UYU</option>
+                  <option>USD</option>
+                </select>
+                 <a href="products.html" class="btn btn-outline-info btn-sm fa-pull-rigth">Seguir comprando</a>
+                 <label for="tipodemoneda" class="btn btn-outline-info fa-pull-right">Tipo de moneda</label>            
                  <div class="clearfix"></div>
              </div>
              <div class="card-body" id="mostrarcart"></div>
@@ -416,8 +421,8 @@ form
       </select>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Forma de pago</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <label for="formadepago">Forma de pago</label>
+    <select class="form-control" id="formadepago">
       <option>Seleccione una forma de pago.</option>
       <option>Tarjeta de credito</option>
       <option>Transferencia bancaria</option>
