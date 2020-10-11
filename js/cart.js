@@ -61,11 +61,11 @@ document.addEventListener("DOMContentLoaded", function(e){
     {
         if(document.querySelector(`#moneda${i}`).textContent == "USD x")
         {
-    total = Number(total) + (Number(document.querySelector(`#cantarticulo${i}`).value)) * ((Number(document.querySelector(`#precioarticulo${i}`).textContent)*40));
+    total = total + (Number(document.querySelector(`#cantarticulo${i}`).value)) * ((Number(document.querySelector(`#precioarticulo${i}`).textContent)*40));
         }
         if(document.querySelector(`#moneda${i}`).textContent == "UYU x")
         {
-    total = Number(total) + (Number(document.querySelector(`#cantarticulo${i}`).value)) * (Number(document.querySelector(`#precioarticulo${i}`).textContent));
+    total = total + (Number(document.querySelector(`#cantarticulo${i}`).value)) * (Number(document.querySelector(`#precioarticulo${i}`).textContent));
         }
     }
 
