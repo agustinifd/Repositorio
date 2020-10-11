@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     }
     }
     }
-    if(document.querySelector("#metodoenvio").value === "UYU")
+    if(document.querySelector("#tipodemoneda").value === "UYU")
     {
     if(document.querySelector("#metodoenvio").value !== "Seleccione el tipo de envio")
     {
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     }    
     document.querySelector("#subtotal").innerHTML = `${subtotal} UYU`; 
     }
-    if(document.querySelector("#metodoenvio").value === "USD")
+    if(document.querySelector("#tipodemoneda").value === "USD")
     {
         if(document.querySelector("#metodoenvio").value !== "Seleccione el tipo de envio")
         {
