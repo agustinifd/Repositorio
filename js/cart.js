@@ -119,5 +119,6 @@ function bloqueActualizacion()
     document.querySelector(`#cantarticulo${i}`).addEventListener('change',totalfn);  ///EN EL FOR LO QUE SE HACE ES CREAR EL EVENTO CHANGE PARA QUE LLAME A LA FUNCION TOTALFN(CALCULAR LOS TOTALES) LA IDEA DEL FOR SE QUE SOLO SE CREEN LA CANTIDAD DE EVENTOS PARA LA CANTIDAD DE ELEMENTOS QUE EXISTAN
     }
     document.querySelector(`#metodoenvio`).addEventListener('change',totalfn); //// ACA SE LLAMA A LA FUNCION TOTALFN CUANDO EL SELECT DE METODO DE ENVIO ES MODIFICADO.
+    document.querySelector(`#tipodemoneda`).addEventListener('change',totalfn);
 }
 
