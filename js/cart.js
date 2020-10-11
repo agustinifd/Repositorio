@@ -87,26 +87,37 @@ document.addEventListener("DOMContentLoaded", function(e){
     }
     }
     }
+    if(document.querySelector("#metodoenvio").value === "UYU")
+    {
     if(document.querySelector("#metodoenvio").value !== "Seleccione el tipo de envio")
     {
         document.querySelector("#total").innerHTML = `${total} UYU`;    
     }    
-    document.querySelector("#subtotal").innerHTML = `${subtotal} UYU`;   
+    document.querySelector("#subtotal").innerHTML = `${subtotal} UYU`; 
+    }
+    if(document.querySelector("#metodoenvio").value === "USD")
+    {
+        if(document.querySelector("#metodoenvio").value !== "Seleccione el tipo de envio")
+        {
+            document.querySelector("#total").innerHTML = `${Number(total)/40} USD`;    
+        }    
+        document.querySelector("#subtotal").innerHTML = `${Number(subtotal)/40} USD`; 
+    } 
     }
 
-    /// FUNCION PARA BORRAR, RECIBE UN PARAMETRO CUANDO ES LLAMADA, EL PARAMETRO VIENE POR ONCLICK DESDE EL BOTON BASURA DEFINIDO EN EL FOR DONDE SE CARGA LA LISTA DE PRODUCTOS PORQUE ASI EL MISMO i QUE SE ASIGNA A TODO EL CONTENEDOR DEL PRODUCTO ES EL MISMO QUE SE ENVIA POR MEDIO DEL ONCLIK A LA FUNCION BORRAR PARA ASI ELIMINAR ESE CONTENEDOR
+    /// FUNCION PARA BORRAR, RECIBE UN PARAMETRO CUANDO ES LLAMADA, EL PARAMETRO VIENE POR ONCLICK DESDE EL BOTON BASURA DEFINIDO EN EL FOR DONDE SE CARGA LA LISTA DE PRODUCTOS PORQUE ASI EL MISMO i QUE SE ASIGNA A TODO EL CONTENEDOR DEL PRODUCTO ES EL MISMO QUE SE ENVIA POR MEDIO DEL ONCLIK A LA FUNCION BORRAR PARA ASI ELIMINAR SOLO ESE CONTENEDOR DE ARTICULO
 
 function borrar(num)
 {
-  document.querySelector(`#articulo${num}`).innerHTML = "";
+  document.querySelector(`#articulo${num}`).innerHTML = "";   
 }
 
-function bloqueActualizacion()
+function bloqueActualizacion() 
 {
     for (let i = 0; i < numerototaldeproductos; i++) 
     {
-    document.querySelector(`#cantarticulo${i}`).addEventListener('change',totalfn); 
+    document.querySelector(`#cantarticulo${i}`).addEventListener('change',totalfn);  ///EN EL FOR LO QUE SE HACE ES CREAR EL EVENTO CHANGE PARA QUE LLAME A LA FUNCION TOTALFN(CALCULAR LOS TOTALES) LA IDEA DEL FOR SE QUE SOLO SE CREEN LA CANTIDAD DE EVENTOS PARA LA CANTIDAD DE ELEMENTOS QUE EXISTAN
     }
-    document.querySelector(`#metodoenvio`).addEventListener('change',totalfn);
+    document.querySelector(`#metodoenvio`).addEventListener('change',totalfn); //// ACA SE LLAMA A LA FUNCION TOTALFN CUANDO EL SELECT DE METODO DE ENVIO ES MODIFICADO.
 }
 
