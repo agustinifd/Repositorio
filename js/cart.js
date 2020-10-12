@@ -121,4 +121,6 @@ function bloqueActualizacion()
     document.querySelector(`#metodoenvio`).addEventListener('change',totalfn); //// ACA SE LLAMA A LA FUNCION TOTALFN CUANDO EL SELECT DE METODO DE ENVIO ES MODIFICADO.
     document.querySelector(`#tipodemoneda`).addEventListener('change',totalfn);
 }
+/// esto es para probar 
+
 
