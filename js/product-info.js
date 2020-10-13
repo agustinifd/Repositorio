@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
                 <div class="action">
-                  <input id="btnagregaralcarrito" class="add-to-cart btn btn-default" type="button">Agregar al carrito!</input>
+                  <button onclick="alcarrito" class="add-to-cart btn btn-default" type="button">Agregar al carrito!</button>
                   <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
                 </div>
               </div>
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function(e){
           </div>
         </div>
       </div>`;
-      document.querySelector("#btnagregaralcarrito").addEventListener("click",alcarrito);
+      
       for (let i= 0; i < todos.length; i++) {
          ////BUSCA DE 0 HASTA LA CANTIDAD DE ELEMENTOS QUE HAY EN TODOS LOS PRODUCTOS
         const element = todos[i];
