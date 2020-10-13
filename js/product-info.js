@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
                 <div class="action">
-                  <button class="add-to-cart btn btn-default" type="button">Agregar al carrito!</button>
+                  <button id="btnagregaralcarrito" class="add-to-cart btn btn-default" type="button">Agregar al carrito!</button>
                   <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
                 </div>
               </div>
@@ -135,3 +135,7 @@ function comentar()
   </div>
 </div>`;
 }
+
+/// Al Carrito ///
+document.querySelector("#btnagregaralcarrito").addEventListener("click",alcarrito);
+function alcarrito(){window.locationf="cart.html";}

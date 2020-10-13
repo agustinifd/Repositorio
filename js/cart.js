@@ -109,7 +109,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 function borrar(num)
 {
-  document.querySelector(`#articulo${num}`).innerHTML = "";   
+  document.querySelector(`#articulo${num}`).innerHTML = "";
+  totalfn();   
 }
 
 function bloqueActualizacion() 
@@ -121,6 +122,38 @@ function bloqueActualizacion()
     document.querySelector(`#metodoenvio`).addEventListener('change',totalfn); //// ACA SE LLAMA A LA FUNCION TOTALFN CUANDO EL SELECT DE METODO DE ENVIO ES MODIFICADO.
     document.querySelector(`#tipodemoneda`).addEventListener('change',totalfn);
 }
-/// esto es para probar 
+document.querySelector("#btnCheckout").addEventListener("click",CheckOut);
+
+function CheckOut()
+{
+    let mensaje = "";
+let validacionSub = false;
+let validacionDir = false;
+let validacionMet = false;
+let validacionFormPago= false;
+    if(document.querySelector("#subtotal").textContent === "0 UYU" || document.querySelector("#subtotal").textContent === "0 USD")
+    {mensaje += "Debe tener al menos un producto ingresado ";}else{validacionSub = true;}
+
+    if(document.querySelector("#direccion").value === "" || document.getElementById("pais").value === "Elegir")
+    {mensaje += " Ingrese datos validos en forma de envio y pais. "}
+    else{validacionDir = true;}
+
+    if(document.querySelector("#metodoenvio").value === "Seleccione el tipo de envio")
+    {mensaje += " Seleccione un metodo de envio "}
+    else{validacionMet = true;}
+    
+    if(document.querySelector("#formadepago").value === "Seleccione una forma de pago.")
+    {mensaje += " Seleccione forma de pago "}
+    else{validacionFormPago = true;}
+
+    if(validacionDir&&validacionFormPago&&validacionMet&&validacionSub)
+    {mensaje = "Felicitaciones su compra fue aprobada con exito!!!"}
+    alert(mensaje);
+    document.getElementById("mensajitofinal").innerHTML = mensaje;
+}
+
+
+
+
 
 
