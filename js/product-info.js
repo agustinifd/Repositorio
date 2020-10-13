@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
                 <div class="action">
-                  <button id="btnagregaralcarrito" class="add-to-cart btn btn-default" type="button">Agregar al carrito!</button>
+                  <input id="btnagregaralcarrito" class="add-to-cart btn btn-default" type="button">Agregar al carrito!</input>
                   <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
                 </div>
               </div>
@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function(e){
           </div>
         </div>
       </div>`;
+      document.querySelector("#btnagregaralcarrito").addEventListener("click",alcarrito);
       for (let i= 0; i < todos.length; i++) {
          ////BUSCA DE 0 HASTA LA CANTIDAD DE ELEMENTOS QUE HAY EN TODOS LOS PRODUCTOS
         const element = todos[i];
@@ -137,5 +138,5 @@ function comentar()
 }
 
 /// Al Carrito ///
-document.querySelector("#btnagregaralcarrito").addEventListener("click",alcarrito);
+
 function alcarrito(){window.locationf="cart.html";}
