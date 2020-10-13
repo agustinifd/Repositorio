@@ -71,9 +71,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
                 <div class="action">
-                  <button onclick="alcarrito" class="add-to-cart btn btn-default" type="button">Agregar al carrito!</button>
+                <input type="button" onclick="location.href='cart.html';" class="add-to-cart btn btn-default" value="Agregar al carrito!"/> 
+                  
                   <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
-                </div>
+                  
+                  </div>
               </div>
             </div>
           </div>
@@ -82,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       
       for (let i= 0; i < todos.length; i++) {
          ////BUSCA DE 0 HASTA LA CANTIDAD DE ELEMENTOS QUE HAY EN TODOS LOS PRODUCTOS
-        const element = todos[i];
+        
         if ((productInfo.relatedProducts[i]) != undefined)
         {
         ////ENTRA A LA LISTA DE TODOS LOS AUTOS 
@@ -106,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     {
       let estrellita = `<span class="fa fa-star checked"></span>`
     for (let i = 0; i < comentarios.length; i++) {
-        const element = comentarios[i];
+        
         document.getElementById("comentarios").innerHTML =  document.getElementById("comentarios").innerHTML + `<div class="card grid-item" style="width: 18rem;">
         <div class="card-header">
         ${estrellita.repeat(comentarios[i].score)}
@@ -137,7 +139,3 @@ function comentar()
 </div>`;
 }
 
-/// Al Carrito ///
-
-function alcarrito(){window.location.href="cart.html";
-console.log("ghola")}
