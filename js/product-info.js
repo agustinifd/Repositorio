@@ -139,4 +139,5 @@ function comentar()
 
 /// Al Carrito ///
 
-function alcarrito(){window.location.href="cart.html";}
+function alcarrito(){window.location.href="cart.html";
+console.log("ghola")}
