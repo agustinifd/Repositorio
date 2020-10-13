@@ -139,4 +139,4 @@ function comentar()
 
 /// Al Carrito ///
 
-function alcarrito(){window.locationf="cart.html";}
+function alcarrito(){window.location.href="cart.html";}
