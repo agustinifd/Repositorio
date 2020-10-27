@@ -1,4 +1,4 @@
-let datosActuales = JSON;
+let datosActuales = JSON.parse(localStorage.getItem('perfil'));
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -12,8 +12,7 @@ document.querySelector("#btnGuardarDatosUser").addEventListener("click",guardarD
 
 function mostrarSpan()
 {
-if(localStorage.getItem("perfil") !== null )
-{
+
 datosActuales.nombre = document.querySelector("#txtNombre").value
 datosActuales.edad = document.querySelector("#txtEdad").value; 
 datosActuales.telefono = document.querySelector("#txtTel").value; 
@@ -22,16 +21,11 @@ document.querySelector("#spanNombre").innerHTML = datosActuales.nombre;
 document.querySelector("#spanEdad").innerHTML = datosActuales.edad; 
 document.querySelector("#spanTel").innerHTML = datosActuales.telefono; 
 document.querySelector("#spanEmail").innerHTML = datosActuales.email; 
-}
+
 }
 
 function guardarDatos()
 {
-    if(localStorage.length !== 0)
-    {
-    localStorage.removeItem('perfil');
-    }
-
     let nombre = document.querySelector("#txtNombre").value; 
     let edad = document.querySelector("#txtEdad").value; 
     let telefono = document.querySelector("#txtTel").value; 
