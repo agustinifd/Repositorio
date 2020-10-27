@@ -9,19 +9,21 @@ mostrarSpan();
 document.querySelector("#btnGuardarDatosUser").addEventListener("click",guardarDatos);
 });
 
-
 function mostrarSpan()
 {
-
+if(localStorage.length === 0)
+{
 datosActuales.nombre = document.querySelector("#txtNombre").value
 datosActuales.edad = document.querySelector("#txtEdad").value; 
 datosActuales.telefono = document.querySelector("#txtTel").value; 
 datosActuales.email = document.querySelector("#txtEmail").value; 
+}
+else{
 document.querySelector("#spanNombre").innerHTML = datosActuales.nombre;
 document.querySelector("#spanEdad").innerHTML = datosActuales.edad; 
 document.querySelector("#spanTel").innerHTML = datosActuales.telefono; 
 document.querySelector("#spanEmail").innerHTML = datosActuales.email; 
-
+}
 }
 
 function guardarDatos()
