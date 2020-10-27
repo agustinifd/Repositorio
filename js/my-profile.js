@@ -32,7 +32,8 @@ function guardarDatos()
     let edad = document.querySelector("#txtEdad").value; 
     let telefono = document.querySelector("#txtTel").value; 
     let email = document.querySelector("#txtEmail").value; 
-    let objDatos = JSON.stringify({"nombre":nombre,"edad":edad,"telefono":telefono,"email":email});
+    let objDatos = JSON.stringify({ "nombre" : nombre , "edad" : edad , "telefono" : telefono , "email" : email });
+    let imgaen = JSON.stringify()
     localStorage.setItem('perfil', objDatos);
     let datosUser = localStorage.getItem('perfil');
     let objDatosJSON = JSON.parse(datosUser);
