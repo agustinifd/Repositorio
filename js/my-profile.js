@@ -25,7 +25,7 @@ document.querySelector("#spanTel").innerHTML = datosActuales.telefono;
 document.querySelector("#spanEmail").innerHTML = datosActuales.email; 
 }
 if (document.querySelector("#imagen").value !== "") {
-document.querySelector("#divVerImagen").innerHTML = `<img src="${datosActuales.imagen}" alt="no se mostro" max-width="300" max-height="300">`
+document.querySelector("#divVerImagen").innerHTML = `<img src="${datosActuales.imagen}" alt="no se mostro" max-width="250" max-height="250">`
 }
 }
 
