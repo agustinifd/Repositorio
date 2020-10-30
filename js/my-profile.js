@@ -24,6 +24,9 @@ document.querySelector("#spanEdad").innerHTML = datosActuales.edad;
 document.querySelector("#spanTel").innerHTML = datosActuales.telefono; 
 document.querySelector("#spanEmail").innerHTML = datosActuales.email; 
 }
+if (document.querySelector("#imagen").value !== "") {
+document.querySelector("#divVerImagen").innerHTML = `<img src="${datosActuales.imagen}" alt="no se mostro">`
+}
 }
 
 function guardarDatos()
@@ -32,8 +35,8 @@ function guardarDatos()
     let edad = document.querySelector("#txtEdad").value; 
     let telefono = document.querySelector("#txtTel").value; 
     let email = document.querySelector("#txtEmail").value; 
-    let objDatos = JSON.stringify({ "nombre" : nombre , "edad" : edad , "telefono" : telefono , "email" : email });
-    let imgaen = JSON.stringify()
+    let imagen = document.querySelector("#imagen").value; 
+    let objDatos = JSON.stringify({ "nombre" : nombre , "edad" : edad , "telefono" : telefono , "email" : email , "imagen" : imagen });
     localStorage.setItem('perfil', objDatos);
     let datosUser = localStorage.getItem('perfil');
     let objDatosJSON = JSON.parse(datosUser);
