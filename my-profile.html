@@ -51,48 +51,85 @@
     </div>
     </div>
   </nav>
-<input type="button" id="borrar" value="borrar">
 
+<div id="mostrar"><img id="imagen"></div>
+
+
+  <!-------------------------------- FORMULARIO  -->
 <div class="container text-center d-flex justify-content-center aling-items-center">
   <form style="text-align: center; align-content: center;"> 
     <br>
-
-    <div id="divVerImagen"></div>
+<br>
+<br>
     
+    <img id="imgenUsuario">
     <div class="container">
+<!-------------------------------- NOMBRE  -->
     <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <label for="txtNombre">Nombre: </label>
-      <input type="text" class="form-control" id="txtNombre">
-      <span id="spanNombre"></span>
+      <div class="input-group is-invalid">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="txtNombre">Nombre:</label>
+        </div>
+        <input type="text" id="txtNombre" class="form-control">
+      </div>
+
     </div>
+<!-------------------------------- EDAD  -->
     <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <label for="txtEdad">Edad: </label>
-      <input type="text" class="form-control" id="txtEdad">
-      <span id="spanEdad"></span>
+      <div class="input-group is-invalid">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="txtEdad">Edad:</label>
+        </div>
+        <input type="text" id="txtEdad" class="form-control">
+      </div>
+
     </div>
+<!-------------------------------- TELEFONO  -->
     <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <label for="txtTel">Telefono: </label>
-      <input type="text" class="form-control" id="txtTel">
-      <span id="spanTel"></span>
+      <div class="input-group is-invalid">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="txtTel">Telefono:</label>
+        </div>
+        <input type="text" id="txtTel" class="form-control">
+      </div>
+
     </div>
+<!-------------------------------- EMAIL  -->
     <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <label for="txtEmail">Email</label>
-      <input type="text" class="form-control" id="txtEmail">
-      <span id="spanEmail"></span>
+      <div class="input-group is-invalid">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="txtEdad">Email:</label>
+        </div>
+        <input type="text" id="txtEmail" class="form-control">
+      </div>
+    </div>
+<!-------------------------------- IMAGEN  -->
+      <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="input-group is-invalid">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="txtUrl">Ingrese el URL de su imagen:</label>
+          </div>
+          <input type="text" id="txtUrl" class="form-control">
+        </div>
+        </div>
     </div>
 
+
+<!-------------------------------- BOTONES  -->
+
+
+
     <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <label for="imagen">Ingrese el URL de su imagen: </label>
-      
-      <input type="text" class="form-control" id="imagen">
+      <input type="button" value="Guardar" class="btn btn-dark" id="btnGuardarDatosUser">
+      <input type="button" value="Editar" class="btn btn-dark" id="btnEditarDatosUser">
     </div>
-    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <input type="button" value="Guardar" class="btn btn-dark" id="btnGuardarDatosUser"></div>
-    </div>
+
+
+</div>
   </form>
 </div> 
 
- 
+ <!-------------------------------- FIN FOMULARIO  -->
  
 
   <div class="alert fade alert-success" role="alert" id="alertResult">

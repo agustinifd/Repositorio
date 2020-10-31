@@ -1,55 +1,89 @@
-let datosActuales = JSON.parse(localStorage.getItem('perfil'));
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.querySelector("#btnGuardarDatosUser").addEventListener("click",guardarDatos);
+    document.querySelector("#btnEditarDatosUser").addEventListener("click",editarDatos);
+    comprobacionDatos();
+  });
+
+let nombreActual = document.querySelector("#txtNombre").value;
+let edadActual = document.querySelector("#txtEdad").value;
+let telActual = document.querySelector("#txtTel").value;
+let urlActual = document.querySelector("#txtUrl").value;
+let emailActual = document.querySelector("#txtEmail").value;
 
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function (e) {
-mostrarSpan();
-document.querySelector("#btnGuardarDatosUser").addEventListener("click",guardarDatos);
-});
-
-function mostrarSpan()
+function comprobacionDatos()
 {
-if(localStorage.length === 0)
+if(localStorage.perfil === undefined)
 {
-datosActuales.nombre = document.querySelector("#txtNombre").value
-datosActuales.edad = document.querySelector("#txtEdad").value; 
-datosActuales.telefono = document.querySelector("#txtTel").value; 
-datosActuales.email = document.querySelector("#txtEmail").value; 
+document.querySelector("#txtNombre").value = ""; 
+document.querySelector("#txtEdad").value = "";
+document.querySelector("#txtTel").value = "";
+document.querySelector("#txtUrl").value = "";
+document.querySelector("#txtEmail").value = ""; 
+
 }
-else{
-document.querySelector("#spanNombre").innerHTML = datosActuales.nombre;
-document.querySelector("#spanEdad").innerHTML = datosActuales.edad; 
-document.querySelector("#spanTel").innerHTML = datosActuales.telefono; 
-document.querySelector("#spanEmail").innerHTML = datosActuales.email; 
-}
-if (document.querySelector("#imagen").value !== "") {
-document.querySelector("#divVerImagen").innerHTML = `<img src="${datosActuales.imagen}" alt="no se mostro" width="250" height="250">`
-}
+else
+{
+let localParsed = JSON.parse(localStorage.getItem("perfil"))
+document.querySelector("#txtNombre").value = localParsed.nombre; 
+document.querySelector("#txtEdad").value = localParsed.edad;
+document.querySelector("#txtTel").value = localParsed.tel;
+document.querySelector("#txtUrl").value = localParsed.url;
+document.querySelector("#txtEmail").value = localParsed.email;
+
+let dataImage = localStorage.getItem('imgData');
+dataImage = JSON.parse(dataImage)
+let img = document.getElementById('imagen');
+img.src = `data:image/png;base64,${dataImage}`;
+
+
+}   
 }
 
 function guardarDatos()
 {
-    let nombre = document.querySelector("#txtNombre").value; 
-    let edad = document.querySelector("#txtEdad").value; 
-    let telefono = document.querySelector("#txtTel").value; 
-    let email = document.querySelector("#txtEmail").value; 
-    let imagen = document.querySelector("#imagen").value; 
-    let objDatos = JSON.stringify({ "nombre" : nombre , "edad" : edad , "telefono" : telefono , "email" : email , "imagen" : imagen });
-    localStorage.setItem('perfil', objDatos);
-    let datosUser = localStorage.getItem('perfil');
-    let objDatosJSON = JSON.parse(datosUser);
-    datosActuales = objDatosJSON;
-    mostrarSpan();
+    nombreActual = document.querySelector("#txtNombre").value;
+    edadActual = document.querySelector("#txtEdad").value;
+    telActual = document.querySelector("#txtTel").value;
+    urlActual = document.querySelector("#txtUrl").value;
+    emailActual = document.querySelector("#txtEmail").value;
+    
+    let imagen = document.getElementById("imagen");
+    imagen.src = urlActual;
+    document.querySelector("#mostrar").appendChild(imagen);
+    
+    imagen = document.getElementById('imagen');
+    imgData = getBase64Image(imagen);
+    let imgDataJSON = JSON.stringify(imgData);
+    localStorage.setItem("imgData", imgDataJSON);
+
+    datosPerfil = JSON.stringify({"nombre" : nombreActual , "edad" : edadActual , "tel" : telActual , "url" : urlActual , "email" : emailActual})
+    localStorage.setItem("perfil", datosPerfil); 
+    document.querySelectorAll(".form-control").forEach(element => {
+    element.setAttribute("disabled","disabled");
+    });
+    document.querySelector("#btnEditarDatosUser").removeAttribute("disabled");
+    document.querySelector("#btnGuardarDatosUser").setAttribute("disabled","disabled");
 }
 
-
-
-
-document.querySelector("#borrar").addEventListener("click",borrar);
-
-function borrar()
+function editarDatos()
 {
-    localStorage.removeItem('perfil');
+    document.querySelectorAll(".form-control").forEach(element => {
+        element.removeAttribute("disabled");
+    });
+    document.querySelector("#btnEditarDatosUser").setAttribute("disabled","disabled");
+    document.querySelector("#btnGuardarDatosUser").removeAttribute("disabled");
 }
+
+function getBase64Image(img) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+  
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+  
+    var dataURL = canvas.toDataURL("image/png");
+  
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+  }
