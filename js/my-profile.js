@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function(e) {
     document.querySelector("#btnGuardarDatosUser").addEventListener("click",guardarDatos);
     document.querySelector("#btnEditarDatosUser").addEventListener("click",editarDatos);
     comprobacionDatos();
@@ -31,13 +31,24 @@ document.querySelector("#txtTel").value = localParsed.tel;
 document.querySelector("#txtUrl").value = localParsed.url;
 document.querySelector("#txtEmail").value = localParsed.email;
 
-let dataImage = localStorage.getItem('imgData');
+
+
+
+////////// MUESTRA /////////
+document.addEventListener("DOMContentLoaded", function(event) {
+var dataImage = localStorage.getItem('imgData');
+
 dataImage = JSON.parse(dataImage)
-let img = document.getElementById('imagen');
-img.src = `data:image/png;base64,${dataImage}`;
+console.log(dataImage)
+bannerImg = document.getElementById('tableBanner');
+bannerImg.src = `data:image/png;base64,${dataImage}`;
+});
+
+////
 
 
-}   
+}
+document.querySelector("#btnGuardarDatosUser").setAttribute("disabled","disabled");
 }
 
 function guardarDatos()
@@ -48,14 +59,15 @@ function guardarDatos()
     urlActual = document.querySelector("#txtUrl").value;
     emailActual = document.querySelector("#txtEmail").value;
     
-    let imagen = document.getElementById("imagen");
-    imagen.src = urlActual;
-    document.querySelector("#mostrar").appendChild(imagen);
+    let imagenActual = document.getElementById("bannerImg");
+    imagenActual.src = urlActual;
     
-    imagen = document.getElementById('imagen');
-    imgData = getBase64Image(imagen);
-    let imgDataJSON = JSON.stringify(imgData);
-    localStorage.setItem("imgData", imgDataJSON);
+    /////// SE GUARDA /////
+bannerImage = imagenActual
+imgData = getBase64Image(bannerImage);
+let imgDataJSON = JSON.stringify(imgData);
+localStorage.setItem("imgData", imgDataJSON);
+
 
     datosPerfil = JSON.stringify({"nombre" : nombreActual , "edad" : edadActual , "tel" : telActual , "url" : urlActual , "email" : emailActual})
     localStorage.setItem("perfil", datosPerfil); 
@@ -75,6 +87,7 @@ function editarDatos()
     document.querySelector("#btnGuardarDatosUser").removeAttribute("disabled");
 }
 
+/////// CONVIERTE //////////
 function getBase64Image(img) {
     var canvas = document.createElement("canvas");
     canvas.width = img.width;
