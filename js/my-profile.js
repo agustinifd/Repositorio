@@ -30,22 +30,7 @@ document.querySelector("#txtEdad").value = localParsed.edad;
 document.querySelector("#txtTel").value = localParsed.tel;
 document.querySelector("#txtUrl").value = localParsed.url;
 document.querySelector("#txtEmail").value = localParsed.email;
-
-
-
-
-////////// MUESTRA /////////
-document.addEventListener("DOMContentLoaded", function(event) {
-var dataImage = localStorage.getItem('imgData');
-
-dataImage = JSON.parse(dataImage)
-console.log(dataImage)
-bannerImg = document.getElementById('tableBanner');
-bannerImg.src = `data:image/png;base64,${dataImage}`;
-});
-
-////
-
+document.getElementById("bannerImg").src = localParsed.url;
 
 }
 document.querySelector("#btnGuardarDatosUser").setAttribute("disabled","disabled");
@@ -61,13 +46,6 @@ function guardarDatos()
     
     let imagenActual = document.getElementById("bannerImg");
     imagenActual.src = urlActual;
-    
-    /////// SE GUARDA /////
-bannerImage = imagenActual
-imgData = getBase64Image(bannerImage);
-let imgDataJSON = JSON.stringify(imgData);
-localStorage.setItem("imgData", imgDataJSON);
-
 
     datosPerfil = JSON.stringify({"nombre" : nombreActual , "edad" : edadActual , "tel" : telActual , "url" : urlActual , "email" : emailActual})
     localStorage.setItem("perfil", datosPerfil); 
@@ -87,16 +65,3 @@ function editarDatos()
     document.querySelector("#btnGuardarDatosUser").removeAttribute("disabled");
 }
 
-/////// CONVIERTE //////////
-function getBase64Image(img) {
-    var canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
-  
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-  
-    var dataURL = canvas.toDataURL("image/png");
-  
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-  }
