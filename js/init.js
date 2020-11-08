@@ -71,7 +71,6 @@ function remplazito(){
 document.querySelector("#salir").addEventListener("click",salir)
 function salir()
 {
-  console.log("estoestapasando");
   sessionStorage.clear();
   localStorage.clear();
   window.location.href = "index.html";
