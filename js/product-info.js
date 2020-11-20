@@ -4,13 +4,13 @@
 
 document.getElementById("btncalificar").addEventListener("click",comentar)
 document.addEventListener("DOMContentLoaded", function(e){
-  fetch("https://japdevdep.github.io/ecommerce-api/product/all.json")
+  fetch(PRODUCTS_URL)
     .then(function(response)
     {return response.json();
     })
     .then(function(todos)
     {
-    fetch("https://japdevdep.github.io/ecommerce-api/product/5678.json")
+    fetch(PRODUCT_INFO_URL)
     .then(function(response)
     {return response.json();
     })
