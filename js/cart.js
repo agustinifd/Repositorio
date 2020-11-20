@@ -3,7 +3,7 @@ let numerototaldeproductos = 0;
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-    fetch("https://japdevdep.github.io/ecommerce-api/cart/654.json")
+    fetch(CART_INFO_URL)
         .then(function (response) {
             return response.json();
         })
