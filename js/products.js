@@ -124,6 +124,7 @@ document.querySelector(`#autonumero${i}`).style.display = 'none';
 
 function mx()
 {
+    document.querySelector("#spanFiltro").innerHTML="";
   let mindelhtml = document.querySelector("#range-10a").value
   let maxdelhtml =  document.querySelector("#range-10b").value
   minse = mindelhtml.trim();
@@ -148,6 +149,7 @@ maxse = maxdelhtml.trim();
     }
     }
 }
+else{document.querySelector("#spanFiltro").innerHTML="Ingrese datos validos para filtrar en ambos campos";}
 }
 
 

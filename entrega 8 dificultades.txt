@@ -1,0 +1,20 @@
+En la entrega 1.
+La autenticacion con Google fue lo mas dificil que tuve que hacer en todo el obligatorio.
+Logre hacerla con fireBase a base de tutoriales y preguntas a la docente y compañeros.
+En la entrega 2.
+Me costo hacer funcionar todo lo de la entrega 2, la funcion con sort me costo mucho
+habia errores en la sintaxsis que lograban que funcione pero a veces daba errores
+por ejemplo en firefox funcionaba pero en chrome no, lo solucione preguntando a la docente y visitando la documentacion de javascript en mozilla.
+En la entrega 3.
+Me parecio bastante accesible sin mayores contratiempos.
+En la entrega 4.
+Me parecio bastante accesible sin mayores contratiempos.
+En la entrega 5.
+El desafiante me costo mucho, tube que hacerlo varias veces, al final opte por hacer un seudocodigo bien pensado y luego trasladarlo al javascript.
+Me quedo por mejorar pero por cuestiones de tiempo no lo puli mas.
+En la entrga 6.
+Me parecio bastante accesible sin mayores contratiempos.
+En la entrega 7.
+El guardar la imagen me llevo muchas horas de preguntar a la docente, compañeros y buscar tutoriales en internet.
+En la entrega 8.
+Levantar el servidor me costo un monton pero con la guia de compañeros logre realizarlo en las clases.

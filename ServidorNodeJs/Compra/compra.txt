@@ -1,0 +1,1 @@
+{"producto":[{"name":"Pino de olor para el auto","cost":"100","currency":"UYU","cantidad":"2"},{"name":"Suzuki Celerio","cost":"12500","currency":"USD","cantidad":"1"}],"total":"535214 UYU","subtotal":"500200 UYU","formaPago":"Transferencia bancaria","direccion":"123123123"}

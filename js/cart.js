@@ -1,3 +1,26 @@
+class Producto
+{
+    constructor()
+    {
+        this.name;
+        this.cost;
+        this.currency;
+        this.cantidad;
+    }
+}
+class Compra
+{
+    constructor()
+    {
+        this.total;
+        this.subtotal;
+        this.formaPago;
+        this.direccion;
+        this.producto = new Array();       
+    }
+}
+
+
 let numerototaldeproductos = 0;
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -15,14 +38,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 <img class="img-responsive" src=${articulo.articles[i].src} alt="pinito">
         </div>
         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-            <h4 class="product-name"><strong>${articulo.articles[i].name}</strong></h4>
+            <h4 class="product-name" id="nombreArticulo${i}"><strong>${articulo.articles[i].name}</strong></h4>
             <h4>
                 <small>${articulo.articles[i].name}</small>
             </h4>
         </div>
         <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
             <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                <h6><strong><b id="precioarticulo${i}">${(articulo.articles[i].unitCost)}</b> <b id="moneda${i}">${articulo.articles[i].currency} <b><span class="text-muted">x</span></strong></h6>
+                <h6><strong><b id="precioarticulo${i}">${(articulo.articles[i].unitCost)}</b> <b id="moneda${i}">${articulo.articles[i].currency}</b><span class="text-muted">x</span></strong></h6>
             </div>
             <div class="col-4 col-sm-4 col-md-4">
                 <div class="quantity">
@@ -54,13 +77,14 @@ function totalfn() {
     let total = 0;
     let subtotal = 0;
     let costoEnvio = 0;
+    let mensaje = "";
     for (let i = 0; i <= numerototaldeproductos; i++) {
         if (document.querySelector(`#cantarticulo${i}`) !== null) {
             if (Number(document.querySelector(`#cantarticulo${i}`).value) > 0) {
-                if (document.querySelector(`#moneda${i}`).textContent == "USD x") {
+                if (document.querySelector(`#moneda${i}`).textContent == "USD") {
                     subtotal = subtotal + (Number(document.querySelector(`#cantarticulo${i}`).value)) * ((Number(document.querySelector(`#precioarticulo${i}`).textContent) * 40));
                 }
-                if (document.querySelector(`#moneda${i}`).textContent == "UYU x") {
+                if (document.querySelector(`#moneda${i}`).textContent == "UYU") {
                     subtotal = subtotal + (Number(document.querySelector(`#cantarticulo${i}`).value)) * (Number(document.querySelector(`#precioarticulo${i}`).textContent));
                 }
                 if (document.querySelector("#metodoenvio").value === "Premium (2-5 días) - Costo del 15% sobre el subtotal.") { costoEnvio = (15 * subtotal) / 100 }
@@ -71,7 +95,7 @@ function totalfn() {
             }
 
             else {
-                total = "Ingrese numeros en los campos de cantidad porfavor";
+                mensaje = "Ingrese numeros en los campos de cantidad porfavor";
                 borrar(i);
                 i = numerototaldeproductos + 5;
             }
@@ -96,6 +120,7 @@ function totalfn() {
 function borrar(num) {
     document.querySelector(`#articulo${num}`).innerHTML = "";
     totalfn();
+    numerototaldeproductos = numerototaldeproductos - 1;
 }
 
 function bloqueActualizacion() {
@@ -134,9 +159,36 @@ if (document.querySelector("#formadepago").value === "Transferencia bancaria") {
 }
 
 
-    if (validacionDir && validacionFormPago && validacionMet && validacionSub) { mensaje = "Felicitaciones su compra fue aprobada con exito!!!" }
+    if (validacionDir && validacionFormPago && validacionMet && validacionSub) { mensaje = "Felicitaciones su compra fue aprobada con exito!!!";
+    ///////////////////////// ACA ENVIAR
+    }
     alert(mensaje);
     document.getElementById("mensajitofinal").innerHTML = mensaje;
+    let productosSeleccionados = [];
+    for (let i = 0; i < numerototaldeproductos; i++) {
+                
+        let producto = new Producto;
+        producto.name = document.querySelector(`#nombreArticulo${i}`).textContent;
+        producto.cost = document.querySelector(`#precioarticulo${i}`).textContent; 
+        producto.currency = document.querySelector(`#moneda${i}`).textContent;
+        producto.cantidad = document.querySelector(`#cantarticulo${i}`).value;
+        productosSeleccionados.push(producto);
+    }
+    let compra = new Compra;
+    compra.total = document.querySelector("#total").textContent;
+    compra.subtotal = document.querySelector("#subtotal").textContent;
+    compra.formaPago = document.querySelector("#formadepago").value;
+    compra.direccion = document.querySelector("#direccion").value;
+    compra.producto = productosSeleccionados;
+    let data = JSON.stringify(compra);
+    
+    fetch('http://localhost:3000/compra', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: data
+        });
 }
 
 function formadepago() {
